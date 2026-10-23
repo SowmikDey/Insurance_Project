@@ -1,7 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List
 
 class GlossaryTermSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     slug: str
     term: str
@@ -14,9 +16,6 @@ class GlossaryTermSchema(BaseModel):
     watch_out_tips: str
     related_module_slug: Optional[str] = None
     official_reference_source: str
-
-    class Config:
-        from_attributes = True
 
 class HighlightedTermMatch(BaseModel):
     term: str

@@ -72,7 +72,7 @@ def test_unauthorized_icici_source_blocked_before_network():
 
         # Verify ProtectedFetcher does NOT make any HTTP network call when blocked
         fetcher = ProtectedFetcherService(db=db)
-        with patch.object(fetcher.session, "get") as mock_get:
+        with patch.object(fetcher.base_client, "get") as mock_get:
             res = fetcher.fetch(icici_url)
             assert res["success"] is False
             assert res["blocked"] is True
@@ -243,6 +243,6 @@ def test_explorer_uses_database_records_and_honest_empty_state():
     try:
         real_count = db.query(InsurancePolicy).filter(InsurancePolicy.is_active == True).count()
         assert data["total"] == real_count
-        assert len(data["items"]) == real_count
+        assert len(data["items"]) == min(12, real_count)
     finally:
         db.close()

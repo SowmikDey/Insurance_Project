@@ -28,6 +28,8 @@ dist-ssr/
 .yarn-integrity
 
 # File Uploads & Temp Storage
+*.pdf
+*.PDF
 backend/data/uploads/*
 !backend/data/uploads/.gitkeep
 data/uploads/*

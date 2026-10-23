@@ -1,0 +1,125 @@
+{
+  "slug": "tata-aig-medicare",
+  "identity": {
+    "insurer_name": "Tata AIG General Insurance Company Limited",
+    "uin_number": "TATHLIP26053V042526",
+    "product_name": "Tata AIG MediCare",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "91 days to 25 years (dependent)",
+    "eligibility_criteria": "Indian residents aged 18 to 65 years. Lifelong guaranteed renewability.",
+    "policy_tenure": "1 Year / 2 Years / 3 Years",
+    "renewal_terms": "Guaranteed lifelong renewal. No claim-based loading or penalty upon renewal.",
+    "portability_conditions": "Portability permitted under IRDAI regulations with at least 45 days application prior to policy expiration.",
+    "geographic_availability": "Pan-India across all empanelled hospital networks.",
+    "effective_version_date": "2025-04-01"
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹3,00,000",
+      "₹4,00,000",
+      "₹5,00,000",
+      "₹10,00,000",
+      "₹15,00,000",
+      "₹20,00,000"
+    ],
+    "inpatient_hospitalization": "Covered up to Sum Insured with no sub-limits on room rent, ICU, doctor fees, or nursing charges.",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 90,
+    "daycare_procedures": "All 541+ daycare procedures covered where stay less than 24h is required.",
+    "domiciliary_hospitalization": "Covered up to Sum Insured for home medical treatment exceeding 3 days.",
+    "home_healthcare": "Covered for specified home nursing procedures following hospital discharge.",
+    "ayush_treatment": "Inpatient treatment covered in registered AYUSH hospitals up to 100% of Sum Insured.",
+    "ambulance_cover": "Road ambulance covered up to ₹3,000 per hospitalization. Air ambulance covered up to ₹5,00,000 per policy year.",
+    "organ_donor_expenses": "Covered up to Sum Insured for harvesting organ from donor.",
+    "modern_treatments": "Covered up to 100% of Sum Insured for advanced medical treatments including robotic surgery, oral chemo, and stem cell therapy.",
+    "maternity_cover": "Not covered under standard MediCare variant (available under MediCare Premier variant).",
+    "opd_dental_vision": "Dental treatment covered only if necessitated by accidental injury during inpatient care.",
+    "restoration_benefit": "100% automatic restore of Sum Insured once in a policy year upon complete exhaustion.",
+    "cumulative_bonus": "Cumulative bonus of 50% for every claim-free year, up to a maximum of 100% of Sum Insured.",
+    "wellness_benefits": "Tata AIG Wellness Program offers reward points redeemable against renewal premium and health vouchers.",
+    "critical_illness_rider": "Second opinion for 11 critical illnesses included; optional Critical Illness lump-sum cover available."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 48,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic and plastic surgery unless required due to accident or burn",
+      "Weight management and bariatric treatment",
+      "Substance abuse and alcohol addiction treatments",
+      "Self-inflicted injuries or suicide attempts",
+      "War, nuclear perils and radiation",
+      "Investigational, experimental or unproven therapies"
+    ],
+    "room_rent_capping": "No Room Rent Capping (Any room category including Single Private AC room). Zero proportionate deduction.",
+    "icu_sub_limit": "No Sub-limit on ICU charges (Actuals up to Sum Insured).",
+    "disease_sub_limits": {
+      "Cataract": "Up to ₹50,000 per eye",
+      "Joint Replacement": "Covered up to Sum Insured after 24 months waiting period"
+    },
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "Pan-India single pricing zone with zero co-payment irrespective of treatment city.",
+    "pre_authorization_rules": "Cashless pre-auth required 48 hours in advance for planned hospitalizations, within 24 hours for emergency.",
+    "medical_necessity_clause": "Treatment must be medically necessary, prescribed by a licensed practitioner, and adhere to recognised medical guidelines.",
+    "non_payable_items": "Consumables excluded unless optional Consumables Benefit rider is purchased."
+  },
+  "premium": {
+    "indicative_annual_premium": 9800.0,
+    "pricing_factors": "Age of oldest member, sum insured tier, and multi-year tenure.",
+    "tenure_discounts": "5% discount on 2-year tenure; 10% discount on 3-year tenure.",
+    "installment_options": "Annual, Half-yearly, and Quarterly premium payment modes supported.",
+    "tax_benefits": "Income Tax deduction under Section 80D up to ₹25,000 (individual/family) and ₹50,000 (seniors).",
+    "medical_underwriting": "Pre-policy health screening required for applicants above 45 years of age.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "100% refund during 15-day free-look period minus stamp duty. Short-rate scale upon cancellation thereafter.",
+    "optional_riders": [
+      "Consumables Cover Add-on",
+      "Maternity and Newborn Cover Extension",
+      "Accidental Death and Dismemberment Cover"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Present Tata AIG Health Card at network hospital TPA/Cashless helpdesk -> Hospital submits pre-auth -> Claim approval within 2 hours -> Cashless discharge upon final billing.",
+    "reimbursement_claim_procedure": "Submit completed claim form with original medical bills, discharge summary, and pharmacy receipts within 30 days of discharge.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Signed Tata AIG Claim Form",
+      "Detailed Hospital Discharge Summary",
+      "Itemized final hospital bill with receipt vouchers",
+      "Doctor prescriptions and diagnostic lab reports",
+      "Pharmacy bills with doctor's prescription",
+      "KYC documents and cancelled bank cheque"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Toll-Free: 1800-266-7780 | Email: customersupport@tataaig.com | Grievance Officer: grievance.redressal@tataaig.com.",
+    "cashless_hospital_network_size": 10200,
+    "tpa_support": "Serviced via In-house TPA network and empanelled TPAs (Medi Assist, FHPL).",
+    "turnaround_time_cashless_hours": 2.0,
+    "claim_settlement_ratio": 91.5,
+    "incurred_claim_ratio": 73.4
+  },
+  "provenance": {
+    "policy_wording_url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_Policy_Wordings_48427e4123.pdf",
+    "cis_document_url": "https://www.tataaig.com/s3/Group_Medi_Care_360_CIS_347c3797ea.pdf",
+    "brochure_url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_Brochure_0a0ed36a23.pdf",
+    "prospectus_url": null,
+    "proposal_form_url": "https://www.tataaig.com/s3/Medi_Care_Plus_Proposal_f9213f5b09.pdf",
+    "uin_history": "TATHLIP26053V042526 (Revision 4 replacing V032023)",
+    "approval_date": "2025-03-20",
+    "publication_date": "2025-04-01",
+    "withdrawn_predecessor_plans": "Tata AIG MediCare V03",
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular on Operations and Allied Matters 2024",
+      "IRDAI Guidelines on Standardization of Health Insurance Contracts"
+    ],
+    "source_url": "https://www.tataaig.com/downloads",
+    "retrieval_timestamp": "2026-10-23T11:46:18.075402Z",
+    "document_sha256": "ba15568fbedf603b0bc0c84e3650d5af3ae087f03c901693cc9b460932d6663e"
+  }
+}

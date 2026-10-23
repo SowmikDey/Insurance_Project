@@ -136,8 +136,12 @@ export const api = {
   },
 
   uploadDocument: async (formData) => {
+    const adminKey = localStorage.getItem('bimagyan_admin_key') || 'bimagyan-admin-secret-2026';
     const res = await fetch(`${API_BASE}/ingestion/upload`, {
       method: 'POST',
+      headers: {
+        'X-Admin-API-Key': adminKey
+      },
       body: formData
     });
     return handleResponse(res);
@@ -152,6 +156,37 @@ export const api = {
         title: title,
         insurer_name: insurerName
       })
+    });
+    return handleResponse(res);
+  },
+
+  // Market Watch & Policy Lifecycle Governance
+  getMarketUpdates: async () => {
+    const res = await fetch(`${API_BASE}/ingestion/market-updates`);
+    return handleResponse(res);
+  },
+
+  scanMarketUpdates: async () => {
+    const res = await fetch(`${API_BASE}/ingestion/market-updates/scan`, {
+      method: 'POST'
+    });
+    return handleResponse(res);
+  },
+
+  applyMarketUpdates: async (items, appliedBy = 'Admin') => {
+    const res = await fetch(`${API_BASE}/ingestion/market-updates/apply`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, applied_by: appliedBy })
+    });
+    return handleResponse(res);
+  },
+
+  updatePolicyStatus: async (policyId, status, reason = null) => {
+    const res = await fetch(`${API_BASE}/ingestion/policies/${policyId}/status`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status, reason })
     });
     return handleResponse(res);
   }

@@ -66,6 +66,14 @@ class DocumentNormalizer:
         full_text = ingested_data.get("full_text", "")
         summary = full_text[:400] + "..." if len(full_text) > 400 else full_text
 
+        # Resolve policy_name if policy_id is provided or present in data
+        pol_name = ingested_data.get("policy_name")
+        if not pol_name and policy_id:
+            from app.models.policy import InsurancePolicy
+            p = self.db.query(InsurancePolicy).filter(InsurancePolicy.id == policy_id).first()
+            if p:
+                pol_name = p.name
+
         doc_source = DocumentSource(
             title=title,
             source_type=source_type,
@@ -74,6 +82,7 @@ class DocumentNormalizer:
             sha256_hash=sha256,
             file_size_bytes=ingested_data.get("file_size", 0),
             insurer_name=insurer_name,
+            policy_name=pol_name,
             extracted_text_summary=summary,
             is_processed=True,
             metadata_json=ingested_data.get("metadata", {})

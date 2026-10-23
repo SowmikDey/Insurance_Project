@@ -1,0 +1,118 @@
+{
+  "slug": "acko-platinum-health",
+  "identity": {
+    "insurer_name": "Acko General Insurance Limited",
+    "uin_number": "ACKHLIP24118V022324",
+    "product_name": "ACKO Platinum Health Plan",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Family Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "91 days to 25 years (dependent)",
+    "eligibility_criteria": "Indian residents aged 18 to 65 years. Digital enrollment without paper forms. Lifelong renewability.",
+    "policy_tenure": "1 Year / 2 Years / 3 Years",
+    "renewal_terms": "Guaranteed lifelong renewal with zero claim-based premium loading.",
+    "portability_conditions": "Portability permitted as per IRDAI portability framework with 45 days prior application.",
+    "geographic_availability": "Pan-India across all verified healthcare providers.",
+    "effective_version_date": "2024-04-01"
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹10,00,000",
+      "₹25,00,000",
+      "₹50,00,000",
+      "₹1 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to Sum Insured for room, boarding, ICU, doctors, nursing, and medicines with 100% bill payment guarantee (zero deductions).",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 180,
+    "daycare_procedures": "All daycare procedures covered without 24-hour hospitalization restriction.",
+    "domiciliary_hospitalization": "Covered up to Sum Insured when hospital beds are unavailable or patient cannot be moved.",
+    "home_healthcare": "Covered for specified treatment procedures under active medical advice.",
+    "ayush_treatment": "Covered up to 100% of Sum Insured for inpatient treatment in recognized AYUSH hospitals.",
+    "ambulance_cover": "Covered up to actuals for emergency road ambulance. Air ambulance up to ₹5,00,000 per policy year.",
+    "organ_donor_expenses": "Covered up to 100% of Sum Insured for harvesting organ from donor.",
+    "modern_treatments": "Covered up to Sum Insured for advanced medical treatments and surgical procedures.",
+    "maternity_cover": "Covered up to ₹1,00,000 under Platinum variant with reduced 12-month or 24-month waiting period.",
+    "opd_dental_vision": "Outpatient consultations and diagnostic tests covered up to specified limits under Platinum add-on.",
+    "restoration_benefit": "Unlimited automatic restoration of Sum Insured for unrelated and related illnesses.",
+    "cumulative_bonus": "Inflation protect feature with bonus increase in Sum Insured of 10% per year without reduction upon claim.",
+    "wellness_benefits": "Free unlimited digital doctor consultations, annual preventive health checkups, and medicine discounts via ACKO App.",
+    "critical_illness_rider": "Second medical opinion included from international specialist centers."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 0,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Aesthetic and cosmetic surgery",
+      "Weight loss surgery unless meeting strict life-threatening BMI criteria",
+      "Alcohol or drug abuse rehabilitation",
+      "Self-inflicted injuries",
+      "War perils and nuclear radiation",
+      "Experimental therapies not recognized by medical bodies"
+    ],
+    "room_rent_capping": "No Room Rent Capping (Any room type: Single Private AC room, Deluxe room, or Suite). Zero proportionate deductions.",
+    "icu_sub_limit": "No Sub-limit on ICU charges (Actuals up to Sum Insured).",
+    "disease_sub_limits": {},
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "Zero zone co-pay across India; standard pricing nationwide.",
+    "pre_authorization_rules": "Cashless pre-auth via ACKO App or hospital cashless desk with instant digital approval within 1 hour.",
+    "medical_necessity_clause": "Treatment must be medically necessary and advised by a registered medical practitioner.",
+    "non_payable_items": "Zero deductions for consumables: ACKO Platinum covers all medical consumables (syringes, gloves, PPE, masks) by default."
+  },
+  "premium": {
+    "indicative_annual_premium": 8900.0,
+    "pricing_factors": "Age of oldest member, sum insured tier, and selected waiting period variant.",
+    "tenure_discounts": "10% discount on 2-year tenure; 15% discount on 3-year tenure.",
+    "installment_options": "Monthly, Quarterly, and Annual payment plans through auto-debit / UPI / credit card.",
+    "tax_benefits": "Income Tax deduction under Section 80D up to ₹25,000 (individual/family) and ₹50,000 (seniors).",
+    "medical_underwriting": "Digital tele-underwriting; instant policy issuance for most age profiles without physical health tests.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "100% refund during 15-day free-look period. Pro-rata refund upon cancellation thereafter.",
+    "optional_riders": [
+      "Zero Waiting Period for Pre-Existing Diseases Rider",
+      "OPD & Tele-consultation Rider"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Instant cashless approval via ACKO App at 11,500+ network hospitals -> Direct hospital billing -> 100% cashless discharge.",
+    "reimbursement_claim_procedure": "Upload photos of hospital bills and discharge summary directly through ACKO App -> Settlement processed within 3 days.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 24,
+    "required_claim_documents": [
+      "Digital claim submission via ACKO App",
+      "Photograph of Final Hospital Bill with payment receipt",
+      "Photograph of Discharge Summary",
+      "Diagnostic reports and doctor's prescriptions",
+      "Bank account details (UPI / IMPS for instant transfer)"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "ACKO Helpline: 1800-266-2256 | Email: health@acko.com / grievance@acko.com.",
+    "cashless_hospital_network_size": 11500,
+    "tpa_support": "100% Direct In-House Claim Settlement (No third-party TPA involved).",
+    "turnaround_time_cashless_hours": 1.0,
+    "claim_settlement_ratio": 94.2,
+    "incurred_claim_ratio": 71.8
+  },
+  "provenance": {
+    "policy_wording_url": "https://acko-cms.ackoassets.com/Policy_Wordings_ACKO_Health_III_Platinum_Super_Top_up_93a2e79848.pdf",
+    "cis_document_url": "https://acko-cms.ackoassets.com/CIS_Acko_Health_III_dafdde7dc6.pdf",
+    "brochure_url": "https://acko-cms.ackoassets.com/Supertopup_brochure_5ec9d68fba.pdf",
+    "prospectus_url": "https://acko-cms.ackoassets.com/Prospectus_Acko_Health_III_8d36488120.pdf",
+    "proposal_form_url": "https://acko-cms.ackoassets.com/Proposal_Form_Acko_Health_III_c8bfca0e7e.pdf",
+    "uin_history": "ACKHLIP24118V022324 (Revision 2 replacing V012021)",
+    "approval_date": "2024-03-10",
+    "publication_date": "2024-04-01",
+    "withdrawn_predecessor_plans": "Acko Health II",
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular on Operations and Allied Matters 2024",
+      "IRDAI Protection of Policyholders' Interests Regulations"
+    ],
+    "source_url": "https://www.acko.com/download/",
+    "retrieval_timestamp": "2026-10-23T11:48:29.298848Z",
+    "document_sha256": "100f66df91ce588dec52ac94e9b870748ae88c63863129a37b65b66ae6338f3b"
+  }
+}

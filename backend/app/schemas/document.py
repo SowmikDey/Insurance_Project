@@ -1,8 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List
 from datetime import datetime
 
 class DocumentSourceSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     title: str
     source_type: str
@@ -16,9 +18,6 @@ class DocumentSourceSchema(BaseModel):
     chunk_count: int
     is_processed: bool
     created_at: datetime
-
-    class Config:
-        from_attributes = True
 
 class IngestionStatusResponse(BaseModel):
     total_sources: int

@@ -19,9 +19,20 @@ export const PolicyCard = ({ policy }) => {
       {/* Top Banner / Category */}
       <div className="p-5 pb-0">
         <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
-            {policy.category?.name || 'Insurance'}
-          </span>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700">
+              {policy.category?.name || 'Insurance'}
+            </span>
+            {policy.status && policy.status !== 'CURRENT' && (
+              <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
+                policy.status === 'WITHDRAWN' ? 'bg-rose-50 text-rose-800 border-rose-200' :
+                policy.status === 'NEEDS_REVIEW' ? 'bg-amber-50 text-amber-800 border-amber-200' :
+                'bg-slate-100 text-slate-600 border-slate-200'
+              }`}>
+                {policy.status.replace('_', ' ')}
+              </span>
+            )}
+          </div>
           <span className="text-[10px] text-slate-500 font-mono">
             {policy.uin_number || 'IRDAI Registered'}
           </span>

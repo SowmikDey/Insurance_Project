@@ -9,7 +9,9 @@ import {
   RotateCcw, 
   Info, 
   X,
-  AlertCircle
+  AlertCircle,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 export const ExplorerPage = () => {
@@ -20,6 +22,7 @@ export const ExplorerPage = () => {
   const [categories, setCategories] = useState([]);
   const [insurers, setInsurers] = useState([]);
   const [total, setTotal] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
   // Filters state from URL or defaults
@@ -31,6 +34,8 @@ export const ExplorerPage = () => {
   const noRoomRentFilter = searchParams.get('no_room_rent') === 'true';
   const searchQuery = searchParams.get('search') || '';
   const sortBy = searchParams.get('sort_by') || 'popular';
+  const currentPage = parseInt(searchParams.get('page') || '1', 10);
+  const pageSize = parseInt(searchParams.get('page_size') || '12', 10);
 
   useEffect(() => {
     const fetchMetadata = async () => {
@@ -61,11 +66,12 @@ export const ExplorerPage = () => {
           no_room_rent_capping: noRoomRentFilter,
           search: searchQuery,
           sort_by: sortBy,
-          page: 1,
-          page_size: 20
+          page: currentPage,
+          page_size: pageSize
         });
         setPolicies(data.items || []);
         setTotal(data.total || 0);
+        setTotalPages(data.total_pages || Math.ceil((data.total || 0) / pageSize) || 1);
       } catch (err) {
         console.error('Failed to query policies:', err);
       } finally {
@@ -73,7 +79,7 @@ export const ExplorerPage = () => {
       }
     };
     fetchFilteredPolicies();
-  }, [categoryFilter, insurerFilter, maxBudgetFilter, minSumInsuredFilter, zeroCopayFilter, noRoomRentFilter, searchQuery, sortBy]);
+  }, [categoryFilter, insurerFilter, maxBudgetFilter, minSumInsuredFilter, zeroCopayFilter, noRoomRentFilter, searchQuery, sortBy, currentPage, pageSize]);
 
   const updateFilter = (key, value) => {
     const next = new URLSearchParams(searchParams);
@@ -82,7 +88,27 @@ export const ExplorerPage = () => {
     } else {
       next.set(key, value.toString());
     }
+    // If a filter other than page changes, reset page to 1
+    if (key !== 'page' && key !== 'page_size') {
+      next.delete('page');
+    }
     setSearchParams(next);
+  };
+
+  const handlePageChange = (newPage) => {
+    if (newPage < 1 || newPage > totalPages || newPage === currentPage) return;
+    const next = new URLSearchParams(searchParams);
+    next.set('page', newPage.toString());
+    setSearchParams(next);
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  };
+
+  const handlePageSizeChange = (newSize) => {
+    const next = new URLSearchParams(searchParams);
+    next.set('page_size', newSize.toString());
+    next.delete('page');
+    setSearchParams(next);
+    window.scrollTo({ top: 120, behavior: 'smooth' });
   };
 
   const handleResetFilters = () => {
@@ -314,13 +340,99 @@ export const ExplorerPage = () => {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {policies.map((p) => (
-                <PolicyCard
-                  key={p.id}
-                  policy={p}
-                />
-              ))}
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {policies.map((p) => (
+                  <PolicyCard
+                    key={p.id}
+                    policy={p}
+                  />
+                ))}
+              </div>
+
+              {/* Pagination Controls */}
+              {total > 0 && (
+                <div className="p-4 bg-white rounded-2xl border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                    <span>
+                      Showing <strong className="text-slate-900 font-bold">{(currentPage - 1) * pageSize + 1}</strong> to{' '}
+                      <strong className="text-slate-900 font-bold">{Math.min(currentPage * pageSize, total)}</strong> of{' '}
+                      <strong className="text-slate-900 font-bold">{total}</strong> policies
+                    </span>
+                    <span className="text-slate-300 hidden sm:inline">•</span>
+                    <div className="flex items-center gap-1.5">
+                      <span>Show</span>
+                      <select
+                        value={pageSize}
+                        onChange={(e) => handlePageSizeChange(Number(e.target.value))}
+                        className="p-1 px-2.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-bold text-slate-700 cursor-pointer"
+                      >
+                        <option value={12}>12</option>
+                        <option value={24}>24</option>
+                        <option value={48}>48</option>
+                      </select>
+                      <span>per page</span>
+                    </div>
+                  </div>
+
+                  {/* Page Buttons */}
+                  {totalPages > 1 && (
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage <= 1}
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                      >
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                        <span>Prev</span>
+                      </button>
+
+                      <div className="flex items-center gap-1 px-1">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1)
+                          .filter(p => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1)
+                          .reduce((acc, p, idx, arr) => {
+                            if (idx > 0 && p - arr[idx - 1] > 1) {
+                              acc.push(-1 * p);
+                            }
+                            acc.push(p);
+                            return acc;
+                          }, [])
+                          .map((p, idx) => {
+                            if (p < 0) {
+                              return (
+                                <span key={`ellipsis-${idx}`} className="px-1 text-xs text-slate-400">
+                                  ...
+                                </span>
+                              );
+                            }
+                            return (
+                              <button
+                                key={p}
+                                onClick={() => handlePageChange(p)}
+                                className={`w-8 h-8 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                                  p === currentPage
+                                    ? 'bg-teal-800 text-white shadow-xs'
+                                    : 'text-slate-600 hover:bg-slate-100'
+                                }`}
+                              >
+                                {p}
+                              </button>
+                            );
+                          })}
+                      </div>
+
+                      <button
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage >= totalPages}
+                        className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                      >
+                        <span>Next</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </main>

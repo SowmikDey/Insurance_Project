@@ -8,11 +8,27 @@ export const GlossaryProvider = ({ children }) => {
   const [termsMap, setTermsMap] = useState({});
   const [activeTerm, setActiveTerm] = useState(null);
   const [modalTerm, setModalTerm] = useState(null);
-  const [popoverPos, setPopoverPos] = useState({ top: 0, left: 0 });
+  const [popoverPos, setPopoverPos] = useState({ top: '0px', bottom: 'auto', left: '0px', placement: 'bottom' });
   const [isLoading, setIsLoading] = useState(true);
   
   const hoverTimeoutRef = useRef(null);
   const closeTimeoutRef = useRef(null);
+
+  // Auto-dismiss floating popover on scroll or window resize
+  useEffect(() => {
+    if (!activeTerm) return;
+    const dismiss = () => {
+      clearTimeout(hoverTimeoutRef.current);
+      clearTimeout(closeTimeoutRef.current);
+      setActiveTerm(null);
+    };
+    window.addEventListener('scroll', dismiss, { passive: true });
+    window.addEventListener('resize', dismiss, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', dismiss);
+      window.removeEventListener('resize', dismiss);
+    };
+  }, [activeTerm]);
 
   useEffect(() => {
     const fetchTerms = async () => {
@@ -68,30 +84,59 @@ export const GlossaryProvider = ({ children }) => {
     const term = findTerm(termIdentifier);
     if (!term) return;
 
-    const rect = event.currentTarget.getBoundingClientRect();
-    const scrollY = window.scrollY || window.pageYOffset;
-    const scrollX = window.scrollX || window.pageXOffset;
+    // Capture bounding client rect synchronously in viewport coordinates
+    const target = event?.currentTarget;
+    if (!target || typeof target.getBoundingClientRect !== 'function') return;
+    const rect = target.getBoundingClientRect();
 
     hoverTimeoutRef.current = setTimeout(() => {
-      // Calculate responsive popover position
-      const popoverWidth = 360;
-      let left = rect.left + scrollX;
-      if (left + popoverWidth > window.innerWidth - 20) {
-        left = window.innerWidth - popoverWidth - 20;
-      }
-      if (left < 10) left = 10;
+      const popoverWidth = 352; // matches w-88 (22rem)
+      const estimatedHeight = 280;
 
-      const top = rect.bottom + scrollY + 8;
-      setPopoverPos({ top, left });
+      // Viewport-relative horizontal positioning with safe margins
+      let left = rect.left;
+      if (left + popoverWidth > window.innerWidth - 16) {
+        left = Math.max(16, window.innerWidth - popoverWidth - 16);
+      }
+      if (left < 16) left = 16;
+
+      // Smart vertical positioning:
+      // If there's not enough room below AND more room above, position ABOVE the term
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const showAbove = spaceBelow < estimatedHeight && spaceAbove > spaceBelow;
+
+      let pos;
+      if (showAbove) {
+        pos = {
+          top: 'auto',
+          bottom: `${Math.max(12, window.innerHeight - rect.top + 8)}px`,
+          left: `${left}px`,
+          placement: 'top'
+        };
+      } else {
+        pos = {
+          top: `${Math.min(window.innerHeight - 60, Math.max(12, rect.bottom + 8))}px`,
+          bottom: 'auto',
+          left: `${left}px`,
+          placement: 'bottom'
+        };
+      }
+
+      setPopoverPos(pos);
       setActiveTerm(term);
-    }, 180);
+    }, 150);
+  };
+
+  const cancelClose = () => {
+    clearTimeout(closeTimeoutRef.current);
   };
 
   const handleMouseLeave = () => {
     clearTimeout(hoverTimeoutRef.current);
     closeTimeoutRef.current = setTimeout(() => {
       setActiveTerm(null);
-    }, 220);
+    }, 200);
   };
 
   const handleClick = (termIdentifier, e) => {
@@ -118,9 +163,13 @@ export const GlossaryProvider = ({ children }) => {
       findTerm,
       handleMouseEnter,
       handleMouseLeave,
+      cancelClose,
       handleClick,
       closeModal,
-      openFullModal: (term) => setModalTerm(term)
+      openFullModal: (term) => {
+        setActiveTerm(null);
+        setModalTerm(term);
+      }
     }}>
       {children}
     </GlossaryContext.Provider>

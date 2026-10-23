@@ -1,0 +1,119 @@
+{
+  "slug": "care-supreme",
+  "identity": {
+    "insurer_name": "Care Health Insurance Limited",
+    "uin_number": "CHIHLIP23018V012223",
+    "product_name": "Care Supreme",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Family Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 99,
+    "dependent_child_age_limit": "90 days to 24 years",
+    "eligibility_criteria": "Lifelong renewability, no upper exit age, Indian residents.",
+    "policy_tenure": "1, 2, or 3 Years",
+    "renewal_terms": "Lifelong renewability with 7.5% - 10% multi-year tenure discounts.",
+    "portability_conditions": "Portability as per IRDAI guidelines with waiting period continuity.",
+    "geographic_availability": "Pan-India with no zone-based co-pay.",
+    "effective_version_date": null
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹7 Lakh",
+      "₹10 Lakh",
+      "₹15 Lakh",
+      "₹25 Lakh",
+      "₹50 Lakh",
+      "₹1 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to 100% of Sum Insured for all hospital charges.",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 180,
+    "daycare_procedures": "All daycare procedures covered without sub-limits.",
+    "domiciliary_hospitalization": "Covered up to Sum Insured for medical necessity.",
+    "home_healthcare": "Covered for chemotherapy and specified home treatments.",
+    "ayush_treatment": "100% of Sum Insured covered in recognized AYUSH institutes.",
+    "ambulance_cover": "Covered up to ₹10,000 per hospitalization (Road) and optional Air Ambulance.",
+    "organ_donor_expenses": "Covered up to Sum Insured for harvesting charges.",
+    "modern_treatments": "Covered up to Sum Insured for robotic surgeries and modern treatments.",
+    "maternity_cover": "Not covered under base Care Supreme variant.",
+    "opd_dental_vision": "Available as Care OPD add-on for consultations and investigations.",
+    "restoration_benefit": "Unlimited automatic restoration of 100% Sum Insured for same/unrelated illness.",
+    "cumulative_bonus": "Cumulative Bonus 50% per claim-free year up to 100% of Sum Insured.",
+    "wellness_benefits": "Discount on renewal premium based on fitness activities (BeFit app tracking).",
+    "critical_illness_rider": "Optional Critical Illness and Personal Accident rider."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 36,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic surgery, aesthetic treatments",
+      "Self-inflicted injuries and adventure sports",
+      "Weight control/obesity treatment unless life-threatening",
+      "Substance abuse, alcohol rehabilitation",
+      "Maternity and fertility treatments (base plan)"
+    ],
+    "room_rent_capping": "No Room Rent Capping (Any room type: Single Private, Twin Sharing, or Suite). No proportionate deductions.",
+    "icu_sub_limit": "No sub-limit on ICU charges (Covered up to Sum Insured).",
+    "disease_sub_limits": {},
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "None (No mandatory zone co-pay).",
+    "pre_authorization_rules": "Cashless pre-auth at least 48h prior for planned, 24h for emergency.",
+    "medical_necessity_clause": "Must be certified as medically required by a registered medical practitioner.",
+    "non_payable_items": "Covered if Claim Shield add-on is opted (pays for gloves, masks, syringes, and consumables)."
+  },
+  "premium": {
+    "indicative_annual_premium": 9200.0,
+    "pricing_factors": "Age of eldest member, chosen Sum Insured, and optional add-on covers.",
+    "tenure_discounts": "7.5% for 2-year tenure, 10% for 3-year tenure.",
+    "installment_options": "Annual, Half-yearly, Quarterly, and Monthly auto-debit.",
+    "tax_benefits": "Section 80D deduction up to ₹25,000 (self/family) and ₹50,000 (parents).",
+    "medical_underwriting": "Tele-medical or physical checkup required for age 50+ or disclosed conditions.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "Full refund within 15 days free-look period; pro-rata short period table thereafter.",
+    "optional_riders": [
+      "Claim Shield (Consumables)",
+      "Reduction in PED (reduces 36m to 12m/24m)",
+      "Care OPD",
+      "Instant Cover"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Present Care health card at network hospital TPA desk -> Pre-auth processed in under 2 hours.",
+    "reimbursement_claim_procedure": "Submit hospital bill, original discharge summary, and pharmacy receipts within 30 days.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Claim Form",
+      "Discharge Summary",
+      "Final itemized bills and receipts",
+      "Diagnostic reports"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Care Customer Support: 1800-102-4455 / customerfirst@careinsurance.com / Insurance Ombudsman.",
+    "cashless_hospital_network_size": 11400,
+    "tpa_support": "In-house Claim Management Team (No external TPA required).",
+    "turnaround_time_cashless_hours": 1.5,
+    "claim_settlement_ratio": 95.2,
+    "incurred_claim_ratio": 62.8
+  },
+  "provenance": {
+    "policy_wording_url": "https://www.careinsurance.com/other-downloads.html",
+    "cis_document_url": "https://www.careinsurance.com/other-downloads.html",
+    "brochure_url": "https://www.careinsurance.com/other-downloads.html",
+    "prospectus_url": null,
+    "proposal_form_url": null,
+    "uin_history": "CHIHLIP23018V012223 (Approved 2022-2023)",
+    "approval_date": "2022-06-15",
+    "publication_date": "2022-07-01",
+    "withdrawn_predecessor_plans": null,
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular 2020"
+    ],
+    "source_url": "https://joinditto.in/health-insurance/care/care-supreme/",
+    "retrieval_timestamp": "2026-10-23T11:32:14.078289Z",
+    "document_sha256": null
+  }
+}

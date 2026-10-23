@@ -1,0 +1,370 @@
+{
+  "faqs_and_guidelines": [],
+  "registered_insurers": [
+    {
+      "Sr. No.": "1",
+      "Insurer": "आदित्य बिड़ला हेल्थ इंश्योरेंस कंपनी लिमिटेड\nAditya Birla Health Insurance Co. Ltd.",
+      "Registered/Corporate Address": "वन वर्ल्ड सेंटर, टॉवर 1, ज्यूपिटर मिल्स कंपाउंड, 841, एसबी मार्ग, एलफिंस्टन रोड, मुंबई - 400013 \nOne World Centre, Tower 1, Jupiter Mills Compound, 841, S B Marg, Elphinstone Road, Mumbai - 400013",
+      "CEO/CMD": "श्री मयंक बथवाल \nMr. Mayank Bathwal",
+      "Appointed Actuary": "श्री बिरेष गिरी\n Mr. Biresh Giri",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone - 022 62799505 / 62799502 सीसीओ / CCO: 022-62799561",
+      "Website": "Web:www.adityabirlahealthinsurance.com",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "2",
+      "Insurer": "केयर हेल्थ इंश्योरेंस लिमिटेड (पूर्व में रेलिगेयर हेल्थ इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था) \nCare Health Insurance Ltd. (formerly known as Religare Health Insurance Co. Ltd.)",
+      "Registered/Corporate Address": "विपुल टेक स्क्वायर, टॉवर सी, तृतीय तल, सेक्टर- 43, गोल्फ कोर्स रोड, गुड़गांव -122009 Vipul Tech Square, Tower C, 3rd Floor, Sector- 43, Golf Course Road, Gurgaon -122009",
+      "CEO/CMD": "श्री अजय कुमार शाह / Mr. Ajay Kumar Shah",
+      "Appointed Actuary": "श्री सी.एस.द्विवेदी Mr. C.S Dwivedi",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Tel: 0124 - 6141810 फैक्स / Fax: 0124 - 6141894",
+      "Website": "Web: www.careinsurance.com",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "3",
+      "Insurer": "गैलेक्सी हेल्थ इंश्योरेंस कंपनी लिमिटेड. (पूर्व में गैलेक्सी हेल्थ एंड अलाइड इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था)\nGalaxy Health Insurance Company Limited\n(formerly known as Galaxy Health and Allied Insurance Co. Ltd)",
+      "Registered/Corporate Address": "प्रेस्टीज पॉलीगॉन, 12वीं शीर्ष तल (पी), #471, अन्ना सलाई, नंदनम, चेन्नई - 600035 Prestige Polygon, 12th Top Floor (P), #471, Anna Salai, Nandanam, Chennai - 600035",
+      "CEO/CMD": "श्री जी श्रीनिवासन\nMr. G Srinivasan",
+      "Appointed Actuary": "सुश्री अनुपम बंसल\nMs. Anupam Bansal",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Tel:044 - 40017227",
+      "Website": "Web Address: https://www.galaxyhealth.com/",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "4",
+      "Insurer": "नारायण हेल्थ इंश्योरेंस लिमिटेड\nNarayana Health Insurance Ltd.",
+      "Registered/Corporate Address": "261/ए, दूसरी मंजिल, बोम्मासंद्रा औद्योगिक क्षेत्र, अनेकल तालुक, बेंगलुरु - 560099\n261/A, Second Floor, Bommasandra Industrial Area, Anekal Talauk, Bengaluru - 560099",
+      "CEO/CMD": "सुश्री शीला अनंत\nMs. Sheela Ananth",
+      "Appointed Actuary": "श्री हिमांशु मनोचा\nMr. Himanshu Manocha",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone: 9821034071",
+      "Website": "Web Address: https://narayanahealth.insurance/",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "5",
+      "Insurer": "मणिपाल सिग्ना हेल्थ इंश्योरेंस कंपनी लिमिटेड Manipal Cigna Health Insurance Company Limited",
+      "Registered/Corporate Address": "401/402, चौथी मंजिल, रहेजा टाइटेनियम, ऑफ वेस्टर्न एक्सप्रेस हाईवे, गोरेगांव (पूर्व), मुंबई - 400 063 \n401/402, 4th Floor, Raheja Titanium, Off Western Express Highway, Goregaon (East), Mumbai - 400 063",
+      "CEO/CMD": "श्री जॉयदीप साहा \nMr. Joydeep Saha",
+      "Appointed Actuary": "श्री विशाल जैन Mr. Vishal Jain",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone: 1800-102-4462",
+      "Website": "Web address: www.manipalcigna.com",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "6",
+      "Insurer": "निवा बूपा हेल्थ इंश्योरेंस कंपनी लिमिटेड \nNiva Bupa Health Insurance Co Ltd.",
+      "Registered/Corporate Address": "सी-98 लाजपत नगर, भाग 1, नई दिल्ली-110024 C-98 Lajpat Nagar, Part 1, New Delhi-110024",
+      "CEO/CMD": "श्री कृष्णन रामचन्द्रन Mr. Krishnan Ramachandran",
+      "Appointed Actuary": "श्री मनीष सेन Mr. Manish Sen",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone : + 91-11-30902000",
+      "Website": "Web: www.nivabupa.com",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "7",
+      "Insurer": "प्रूडेंशियल एच सी एल हेल्थ इंश्योरेंस लिमिटेड\nPrudential HCL Health Insurance Limited",
+      "Registered/Corporate Address": "सुइट 6, 48 वीं मंज़िल, कॉमर्ज III, इंटरनेशनल बिज़नेस पार्क, ओबेरॉय गार्डन सिटी, वेस्टर्न एक्सप्रेस राजमार्ग के समीप, गोरेगांव (पूर्व), मुंबई -400063\nSuite 6, 48th Floor, Commerz III, International Business Park, Oberoi Garden City, Off Western Express Highway, Goregaon (E), Mumbai – 400063.",
+      "CEO/CMD": "श्री अमित दवे\nMr. Amit Dave (MD & CEO- Designate)",
+      "Appointed Actuary": "श्री निरव हसमुखभाई शाह\nMr. Nirav Hasmukhbhai Shah",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone number: 1800-268-2000",
+      "Website": "https://prudentialhealth.in/",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "8",
+      "Insurer": "स्टार हेल्थ एंड एलाइड इंश्योरेंस कंपनी लिमिटेड \nStar Health & Allied Insurance Co.Ltd.",
+      "Registered/Corporate Address": "स्टार हेल्थ एंड एलाइड इंश्योरेंस कंपनी लिमिटेड 1, न्यू टैंक स्ट्रीट, वल्लुवर कोट्टम हाई रोड, नुंगमबक्कम, चेन्नई- 600 034 \nStar Health & Allied Insurance Co.Ltd. 1, New Tank Street, Valluvar Kottam High Road, Nungambakkam, Chennai- 600 034",
+      "CEO/CMD": "श्री आनंद रॉय                        Mr. Anand Roy",
+      "Appointed Actuary": "श्री अश्वनी कुमार अरोड़ा               Mr. Ashwani Kumar Arora",
+      "Telephone no./Fax no./ Web address of the\n\t\t\t\tInsurer": "दूरभाष / Phone: 044 - 28288800",
+      "Website": "Web: www.starhealth.in",
+      "entity_category": "List of Health Insurers"
+    },
+    {
+      "Sr. No.": "1",
+      "Insurer": "एको जनरल इंश्योरेंस लिमिटेड Acko General Insurance Limited",
+      "Registered/Corporate Address": "दूसरी मंजिल, #36/5, हसलहब वन ईस्ट, सोमसांद्रपाल्या, 27वीं मुख्य सड़क, सेक्टर 2, एचएसआर लेआउट, बेंगलुरु, कर्नाटक - 560102 2nd Floor, #36/5, Hustlehub One East, Somasandrapalya, 27th Main road, Sector 2, HSR Layout, Bengaluru, Karnataka - 560102",
+      "CEO/CMD": "श्री अनिमेष कुमार दास Mr.Animesh Kumar Das",
+      "Appointed Actuary": "श्री राहुल खेतान / Mr. Rahul Khetan",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022 62672525",
+      "Website": "वेब / Web: www.acko.com/gi",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "2",
+      "Insurer": "एग्रीकल्चर इंश्योरेंस कंपनी ऑफ इंडिया लिमिटेड Agriculture Insurance Company of India Limited",
+      "Registered/Corporate Address": "प्लेट बी एंड सी, 5वीं मंजिल, ब्लॉक 1, पूर्वी किदवई नगर, नई दिल्ली-110023 Plate B&C, 5th Floor, Block 1, East Kidwai Nagar, New Delhi-110023",
+      "CEO/CMD": "सुश्री  मिनी जॉर्ज (अतिरिक्त प्रभार)  Ms. Mini George (Additional Charge )",
+      "Appointed Actuary": "श्री अंशुल भूषण /Mr. Anshul Bhushan",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 011-24600444",
+      "Website": "वेब / Web: www.aicofindia.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "3",
+      "Insurer": "बजाज जनरल इंश्योरेंस लिमिटेड (पहले बजाज अलियांज जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जानी जाती थी) Bajaj General Insurance Limited (formerly knowns as Bajaj Allianz General Insurance Company Limited)",
+      "Registered/Corporate Address": "बजाज इंश्योरेंस हाउस, एयरपोर्ट रोड, येरवडा, पुणे, महाराष्ट्र, 411006, Bajaj Insurance House, Airport Road, Yerwada, Pune, Maharashtra, 411006, 411006",
+      "CEO/CMD": "श्री तपन सिंघल Mr. Tapan Singhel",
+      "Appointed Actuary": "श्री गौरव मल्होत्रा Mr. Gaurav Malhotra",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone - (+91 20) 30512246",
+      "Website": "वेब / Web: https://www.bajajgeneralinsurance.com/",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "4",
+      "Insurer": "चोलामंडलम एमएस जनरल इंश्योरेंस कंपनी लिमिटेड Cholamandalam MS General Insurance Company Limited",
+      "Registered/Corporate Address": "डेयर हाउस, दूसरी मंजिल, एनएससी बोस रोड, पैरिस, चेन्नई-600001 Dare House, 2 nd Floor, NSC Bose Road, Parrys, Chennai-600001.",
+      "CEO/CMD": "श्री वेंकटेश्वरन सूर्यनारायणन Mr. Venkateswaran Suryanarayanan",
+      "Appointed Actuary": "श्री अमित मेहरा Mr. Amit Mehra",
+      "Telephone no./Fax no./ Web address of the Insurer": "044-40445400 / 044-40445550",
+      "Website": "वेब / Web:www.cholainsurance.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "5",
+      "Insurer": "ईसीजीसी लिमिटेड ECGC Limited",
+      "Registered/Corporate Address": "ईसीजीसी भवन, सीटीएस नंबर 393,393/1 से 45, एम.वी रोड अंधेरी ईस्ट, मुंबई - 400069, महाराष्ट्र, भारत ECGC Bhawan, CTS No.393,393/1 to 45, M.V Road Andheri East, Mumbai – 400069, Maharashtra, India",
+      "CEO/CMD": "श्री सृष्टिराज अम्बष्ठ (अतिरिक्त प्रभार) Mr. Sristiraj Ambastha (Additional Charge)",
+      "Appointed Actuary": "सुश्री प्रिसिला सिन्हा Ms. Priscilla Sinha",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022 66590 610 / 022 66590 510",
+      "Website": "वेब / Web: www.ecgc.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "6",
+      "Insurer": "जेनरली सेंट्रल इंश्योरेंस कंपनी लिमिटेड Generali Central Insurance Company Limited",
+      "Registered/Corporate Address": "यूनिट नंबर 801 और 802 8वीं मंजिल, टॉवर सी, दूतावास 247 पार्क एलबीएस मार्ग, विक्रोली (पश्चिम) मुंबई 400083 Unit number 801 & 802 8th floor, Tower C, Embassy 247 Park L.B.S Marg, Vikhroli (west) Mumbai 400083",
+      "CEO/CMD": "श्री के.जी.कृष्णमूर्ति राव Mr.K.G.Krishnamoorthy Rao",
+      "Appointed Actuary": "श्री साकेत सिंघल / Mr. Saket Singhal",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone : + 91- 022-40976601",
+      "Website": "वेब / Web: www.general.futuregenerali.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "7",
+      "Insurer": "गो डिजिट जनरल इंश्योरेंस लिमिटेड Go Digit General Insurance Limited",
+      "Registered/Corporate Address": "1 से 6 मंजिल, अनंत वन (एआर वन), प्राइड होटल लेन, नरवीर तानाजी वाडी, सिटी सर्वे नंबर 1579, शिवाजी नगर, पुणे-411005; 1 to 6 floors, Ananta One (AR One), Pride Hotel Lane, Narveer Tanaji Wadi, City Survey No.1579, Shivaji Nagar, Pune-411005;",
+      "CEO/CMD": "सुश्री जसलीन कोहली Ms. Jasleen Kohli",
+      "Appointed Actuary": "श्री आदर्श किशोर अग्रवाल Mr. Adarsh Kishor Agarwal",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 7026061234 / 1800-258-5956",
+      "Website": "वेब / Web: www.godigit.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "8",
+      "Insurer": "एचडीएफसी एर्गो जनरल इंश्योरेंस कंपनी लिमिटेड HDFC ERGO General Insurance Company Limited",
+      "Registered/Corporate Address": "6वीं मंजिल, लीला बिजनेस पार्क, अंधेरी-कुर्ला रोड, बोरी कॉलोनी, विजय नगर कॉलोनी वेस्ट, मारोल, अंधेरी ईस्ट, मुंबई, महाराष्ट्र 400059 6th Floor, Leela Business Park, Andheri - Kurla Rd, Bori Colony, Vijay Nagar Colony West, Marol, Andheri East, Mumbai, Maharashtra 400059",
+      "CEO/CMD": "श्री परथनिल घोष Mr.Parthanil Ghosh",
+      "Appointed Actuary": "श्री अंशुल मित्तल Mr. Anshul Mittal",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: +91 22-66383600 फैक्स / Fax No.: +91 22-66383699",
+      "Website": "वेब / Web: www.hdfcergo.co",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "9",
+      "Insurer": "आईसीआईसीआई लोम्बार्ड जनरल इंश्योरेंस कंपनी लिमिटेड ICICI LOMBARD General Insurance Company Limited",
+      "Registered/Corporate Address": "आईसीआईसीआई लोम्बार्ड हाउस, 414, वीर सावरकर मार्ग सिद्धिविनायक मंदिर के पास, प्रभादेवी मुंबई 400025, भारत ICICI Lombard House, 414, Veer Savarkar Marg Near Siddhivinayak Temple, Prabhadevi Mumbai 400025, India",
+      "CEO/CMD": "श्री संजीव मंत्री Mr. Sanjeev Mantri",
+      "Appointed Actuary": "श्री प्रसून कुमार सरकार Mr. Prasun Kumar Sarkar",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 1800 2666 फैक्स / Fax: 022 - 61961323",
+      "Website": "वेब / Web: www.icicilombard.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "10",
+      "Insurer": "इफको टोकियो जनरल इंश्योरेंस कंपनी लिमिटेड IFFCO TOKIO General Insurance Company Limited",
+      "Registered/Corporate Address": "इफको टावर II, चौथी और पांचवीं मंजिल, प्लॉट नंबर 3, सेक्टर 29, गुरुग्राम- 122001 IFFCO Tower II, 4th & 5th Floor, Plot No. 3,Sector 29, Gurugram- 122001",
+      "CEO/CMD": "श्री तात्सुया फुजिमोटो  Mr. Tatsuya Fujimoto",
+      "Appointed Actuary": "सुश्री ईशा खेड़ा Ms. Isha Khera",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 0124-2850100 फैक्स / Fax: +91-0124-2577923,2577924",
+      "Website": "वेब / Web: www.iffcotokio.co.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "11",
+      "Insurer": "ज्यूरिख कोटक जनरल इंश्योरेंस कंपनी (इंडिया) लिमिटेड (पहले कोटक महिंद्रा जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था) Zurich Kotak General Insurance Company (India) Limited (formerly known as Kotak Mahindra General Insurance Company Limited)",
+      "Registered/Corporate Address": "यूनिट नं. 401, चौथी मंजिल, सिल्वर मेट्रोपोलिस, जय कोच कंपाउंड, ऑफ वेस्टर्न एक्सप्रेस हाईवे, गोरेगांव (पूर्व), मुंबई- 400063 Unit no. 401, 4th Floor, Silver Metropolis, Jai Coach Compound, Off Western Express Highway, Goregaon (East), Mumbai- 400063",
+      "CEO/CMD": "श्री आलोक अग्रवाल Mr. Alok Agarwal",
+      "Appointed Actuary": "श्री शिवेंद्र त्रिपाठी Mr. Shivendra Tripathy",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone No - 02242858601",
+      "Website": "वेब / Web: http://www.zurichkotak.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "12",
+      "Insurer": "क्षेमा जनरल इंश्योरेंस लिमिटेड Kshema General Insurance Limited",
+      "Registered/Corporate Address": "413, चौथी मंजिल, माई होम टाइकून बिल्डिंग, कुंदन बाग, बेगमपेट, हैदराबाद - 500016 413, 4th Floor, My Home Tycoon Building, Kundan Bagh, Begumpet, Hyderabad - 500016",
+      "CEO/CMD": "श्री राजेशनानी वेंकट दासारी Mr. Rajeshnani Venkata Dasari (Interim MD&CEO)",
+      "Appointed Actuary": "श्री जतिन अरोड़ा/Mr. Jatin Arora",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 04023409918",
+      "Website": "वेब / Website: www.kshema.co",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "13",
+      "Insurer": "लिबर्टी जनरल इंश्योरेंस लिमिटेड Liberty General Insurance Limited",
+      "Registered/Corporate Address": "यूनिट 1501 और 1502, 15वीं मंजिल, टॉवर 2, वन इंटरनेशनल सेंटर, सेनापति बापट मार्ग, प्रभादेवी, मुंबई - 400013 Unit 1501 & 1502, 15th floor, Tower 2, One International Center, Senapati Bapat Marg, Prabhadevi, Mumbai – 400013",
+      "CEO/CMD": "श्री पराग वेद Mr. Parag Ved",
+      "Appointed Actuary": "श्री रयान समरतुंगा Mr. Ryan Samaratunga",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 1800-266-5844",
+      "Website": "वेब / Web: www.libertyinsurance.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "14",
+      "Insurer": "मैग्मा जनरल इंश्योरेंस लिमिटेड (पूर्व में मैग्मा HDI जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था) Magma General Insurance Limited(formerly known as Magma HDI General Insurance Company Limited)",
+      "Registered/Corporate Address": "यूनिट नंबर 1बी और 2बी, दूसरी मंजिल, इक्विनॉक्स बिजनेस पार्क, टॉवर - 3, एलबीएस मार्ग, कुर्ला (पश्चिम), मुंबई - 400070 Unit No. 1B & 2B, 2nd floor, Equinox Business Park, Tower – 3, LBS Marg, Kurla (West), Mumbai – 400070",
+      "CEO/CMD": "श्री राजीव कुमारस्वामी Mr. Rajive Kumaraswami",
+      "Appointed Actuary": "श्री पुनीत सूदन (सलाहकार के तौर पर) / Mr. Puneet Sudan (on Consulting Basis)",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022- 67284800",
+      "Website": "वेब / Web: www.magma-hdi.co.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "15",
+      "Insurer": "नेशनल इंश्योरेंस कंपनी लिमिटेड National Insurance Company Limited",
+      "Registered/Corporate Address": "परिसर नं.18-0374, प्लॉट नं.सीबीडी-81, न्यू टाउन, कोलकाता-700 156 (09/08/2023 से प्रभावी) Premises No.18-0374, Plot No.CBD-81, New Town, Kolkata-700 156 (effective from 09/08/2023)",
+      "CEO/CMD": "श्रीमती राजेश्वरी सिंह मुनि Ms. Rajeshwari Singh Muni",
+      "Appointed Actuary": "श्री अशोक कुमार लाहोटी Mr.Ashok Kumar Lahoty",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 033-22831705 फैक्स / Fax: 033-22831740",
+      "Website": "वेब / Web: https://nationalinsurance.nic.co.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "16",
+      "Insurer": "नवी जनरल इंश्योरेंस लिमिटेड Navi General Insurance Limited",
+      "Registered/Corporate Address": "वैष्णवी टेक स्क्वायर, 7वीं मंजिल, इबल्लूर गांव, बेगुर होबली, बेंगलुरु, कर्नाटक- 560102 Vaishnavi Tech Square, 7th Floor, Iballur Village, Begur Hobli, Bengaluru, Karnataka- 560102",
+      "CEO/CMD": "श्री वैभव गोयल Mr.Vaibhav Goyal",
+      "Appointed Actuary": "श्री शांतनु गौड़ Mr Shantanu Gaur",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 18001230004",
+      "Website": "वेब / Web: www.naviinsurance.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "17",
+      "Insurer": "रहेजा क्यूबीई जनरल इंश्योरेंस कंपनी लिमिटेड Raheja QBE General Insurance Co. Ltd.",
+      "Registered/Corporate Address": "रहेजा क्यूबीई जनरल इंश्योरेंस कंपनी लिमिटेड ग्राउंड फ्लोर, पी एंड जी प्लाजा, कार्डिनल ग्रेसियस रोड, चकला, अंधेरी (पूर्व), मुंबई - 400099Raheja QBE General Insurance Co. Ltd. Ground Floor, P&G Plaza, Cardinal Gracious Road, Chakala, Andheri (East),Mumbai - 400099",
+      "CEO/CMD": "श्री राजीव डोगरा Mr. Rajeev Dogra",
+      "Appointed Actuary": "निखिल कामदार / Nikhil Kamdar",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022- 4231 3888 Fax : 022-4231 3777",
+      "Website": "वेब / Web: www.rahejaqbe.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "18",
+      "Insurer": "इंडसइंड जनरल इंश्योरेंस कंपनी लिमिटेड (पूर्व में रिलायंस जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था) IndusInd General Insurance Company Limited (formerly knowns Reliance General Insurance Company Limited)",
+      "Registered/Corporate Address": "इंडसइंड जनरल इंश्योरेंस कंपनी लिमिटेड (पूर्व में रिलायंस जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था), 6वीं मंजिल, ओबेरॉय कॉमर्ज, इंटरनेशनल बिजनेस पार्क, ओबेरॉय गार्डन सिटी, ऑफ वेस्टर्न एक्सप्रेस हाईवे, गोरेगांव (पूर्व), मुंबई - 400063 IndusInd General Insurance Company Limited (formerly Reliance General Insurance Co. Ltd.), 6th Floor, Oberoi Commerz, International Business Park, Oberoi Garden City, Off Western Express Highway, Goregaon (East), Mumbai – 400063",
+      "CEO/CMD": "श्री राकेश जैन Mr. Rakesh Jain",
+      "Appointed Actuary": "श्री ए वी कार्तिकेयन Mr. A V Karthikeyan",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022-33031000 फैक्स / Fax : 022-33034662",
+      "Website": "वेब / Web: https://www.indusindinsurance.com/",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "19",
+      "Insurer": "रॉयल सुंदरम जनरल इंश्योरेंस कंपनी लिमिटेड Royal Sundaram General Insurance Company Limited",
+      "Registered/Corporate Address": "\"विश्रांति मेलाराम टावर्स\", नंबर 2/319, राजीव गांधी सलाई (ओएमआर), करापक्कम, चेन्नई - 600097 \"Vishranthi Melaram Towers\", No.2/319, Rajiv Gandhi Salai (OMR), Karapakkam, Chennai - 600097",
+      "CEO/CMD": "श्री वेदनारायणन Mr. Vedanarayanan",
+      "Appointed Actuary": "श्री ए वी रामानन Mr. A V Ramanan",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 044-71177117",
+      "Website": "वेब / Web: www.royalsundaram.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "20",
+      "Insurer": "एसबीआई जनरल इंश्योरेंस कंपनी लिमिटेड SBI General Insurance Company Limited",
+      "Registered/Corporate Address": "फुलक्रम बिल्डिंग, 9वीं मंजिल, ए & बी विंग, सहार रोड, अंधेरी (पूर्व), मुंबई 400099 Fulcrum Building, 9th Floor, A & B wing, Sahar Road, Andheri (East), Mumbai 400099",
+      "CEO/CMD": "श्री नवीन चंद्रा झा Mr. Naveen Chandra Jha",
+      "Appointed Actuary": "श्री पुश्कर देओधर Mr. Pushkar Deodhar",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone no : +91 22 4241 2000",
+      "Website": "वेब / Web : www.sbigeneral.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "21",
+      "Insurer": "श्रीराम जनरल इंश्योरेंस कंपनी लिमिटेड Shriram General Insurance Company Limited",
+      "Registered/Corporate Address": "ई-8, ईपीआईपी, रीको औद्योगिक क्षेत्र, सीतापुरा, जयपुर - 302022 (राजस्थान) E-8, EPIP, RIICO Industrial Area, Sitapura, Jaipur - 302022 (Rajasthan)",
+      "CEO/CMD": "श्री अनिल कुमार अग्रवाल Mr. Anil Kumar Aggarwal",
+      "Appointed Actuary": "श्री रचित गोयल/ Mr. Rachit Goyal",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: +91-141-4828400, 4951111, 3996700 फैक्स / Fax: +91-141-2770692 / 93",
+      "Website": "वेब / Web: Address: www.shriramgi.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "22",
+      "Insurer": "टाटा एआईजी जनरल इंश्योरेंस कंपनी लिमिटेड Tata AIG General Insurance Company Limited",
+      "Registered/Corporate Address": "पेनिनसुला बिजनेस पार्क, टॉवर ए, 15वीं मंजिल, जीके मार्ग, लोअर परेल, मुंबई - 400013 Peninsula Business Park, Tower A, 15th Floor, G.K. Marg, Lower Parel, Mumbai – 400013",
+      "CEO/CMD": "श्री अमित एस गणोरकर Mr.Amit S.Ganorkar",
+      "Appointed Actuary": "श्री सुप्रियो चाकी Mr.Supriyo Chaki",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022-66699696",
+      "Website": "वेब / Web: www.tataaig.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "23",
+      "Insurer": "द न्यू इंडिया एश्योरेंस कंपनी लिमिटेड The New India Assurance Company Limited",
+      "Registered/Corporate Address": "87, एमजी रोड, फोर्ट, मुंबई, महाराष्ट्र - 400 001 87, M.G Road, Fort, Mumbai, Maharashtra – 400 001",
+      "CEO/CMD": "डॉ. लावण्या आर. मुंडयूर Dr. Lavanya R. Mundayur",
+      "Appointed Actuary": "श्री शरद रामनारायणन Mr Sharad Ramnarayanan",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022-22708100 फैक्स / Fax: 022-22700470",
+      "Website": "वेब / Web: www.newindia.co.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "24",
+      "Insurer": "ओरिएंटल इंश्योरेंस कंपनी लिमिटेड The Oriental Insurance Company Limited",
+      "Registered/Corporate Address": "द ओरिएंटल इंश्योरेंस कंपनी लिमिटेड, \"ओरिएंटल हाउस\", ए-25/27, आसफ अली रोड, नई दिल्ली-I 110 002 The Oriental Insurance Company Limited,“Oriental House”, A-25/27, Asaf Ali Road, New Delhi-I 110 002",
+      "CEO/CMD": "श्री संजय जोशी Mr Sanjay Joshi",
+      "Appointed Actuary": "श्री रोहित सिंघल Mr Rohit Singhal",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 011-2326 5024, 2327 9221",
+      "Website": "वेब / Web: www.orientalinsurance.org.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "25",
+      "Insurer": "यूनाइटेड इंडिया इंश्योरेंस कंपनी लिमिटेड United India Insurance Company Limited",
+      "Registered/Corporate Address": "नंबर 24, व्हाइट्स रोड, चेन्नई -600014 No.24, Whites Road, Chennai -600014",
+      "CEO/CMD": "श्री भूपेश सुशील राहुल Mr. Bhupesh Sushil Rahul",
+      "Appointed Actuary": "श्री रामनाथ वेंकट भागवत / Mr. Ramnath Venkat Bhagavat",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone : 044-28520958/28525275 फैक्स / Fax: 044-28525280",
+      "Website": "वेब / Web: www.uiic.co.in",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "26",
+      "Insurer": "यूनिवर्सल सोम्पो जनरल इंश्योरेंस कंपनी लिमिटेड Universal Sompo General Insurance Company Limited",
+      "Registered/Corporate Address": "यूनिट नंबर 103, पहली मंजिल, आकृति स्टार, एमआईडीसी , अंधेरी (पूर्व), मुंबई-400093, महाराष्ट्र Unit No.103, 1st Floor, Ackruti Star, MIDC, Andheri (East), Mumbai-400093, Maharashtra",
+      "CEO/CMD": "श्री शरद माथुर Mr.Sharad Mathur",
+      "Appointed Actuary": "श्री विकास गर्ग Mr.Vikas Garg",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone: 022-41659800/ 41659900",
+      "Website": "वेब / Web: www.universalsompo.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "27",
+      "Insurer": "ज़ूनो जनरल इंश्योरेंस लिमिटेड (पूर्व में एडलवाइस जनरल इंश्योरेंस कंपनी लिमिटेड के नाम से जाना जाता था) Zuno General Insurance Ltd. (formerly known as Edelweiss General Insurance Company Limited)",
+      "Registered/Corporate Address": "दूसरी मंजिल, टॉवर 3, विंग बी, कोहिनूर सिटी, किरोल रोड, कुर्ला (पश्चिम) मुंबई सिटी एमएच, 400070 2nd floor, Tower 3, Wing B, Kohinoor City, Kirol Road, Kurla (west) Mumbai City MH, 400070",
+      "CEO/CMD": "सुश्री शुभदर्शिनी घोष Ms. Shubhdarshini Ghosh",
+      "Appointed Actuary": "सुश्री तान्या चक्रवर्ती Ms. Tania Chakrabarti",
+      "Telephone no./Fax no./ Web address of the Insurer": "फ़ोन / Phone : 1800 12000",
+      "Website": "वेब / Web: www.hizuno.com",
+      "entity_category": "List of General Insurers"
+    },
+    {
+      "Sr. No.": "28",
+      "Insurer": "कीवी जनरल इंश्योरेंस लिमिटेड Kiwi General Insurance Limited",
+      "Registered/Corporate Address": "संख्या 101, यशीला नं. 1/1 पहली मुख्य कोरामंगला 8वां ब्लॉक बेंगलुरु 560095, कर्नाटक Number 101, Yashila No. 1/1 1st Main Koramangala 8th Block Bengaluru 560095, Karnataka",
+      "CEO/CMD": "श्री सौरव जैसवाल Mr.Saurav Jaiswal",
+      "Appointed Actuary": "",
+      "Telephone no./Fax no./ Web address of the Insurer": "",
+      "Website": "वेब / Web : www.kiwiinsurance.com",
+      "entity_category": "List of General Insurers"
+    }
+  ],
+  "source_urls": [
+    "https://irdai.gov.in/list-of-health-insurers",
+    "https://irdai.gov.in/list-of-general-insurers"
+  ],
+  "timestamp": "2026-10-23T11:31:12Z"
+}

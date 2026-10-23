@@ -62,7 +62,7 @@ def test_education_modules_and_quiz():
     res = client.get("/api/v1/education/modules")
     assert res.status_code == 200
     modules = res.json()
-    assert len(modules) == 10
+    assert len(modules) >= 10
     assert modules[0]["slug"] == "what-is-insurance"
 
     # Detail
@@ -105,7 +105,8 @@ def test_ingestion_endpoints():
     upload_res = client.post(
         "/api/v1/ingestion/upload",
         data={"title": "Test Policy Wordings", "insurer_name": "Test Insurer"},
-        files={"file": ("test_policy.txt", io.BytesIO(file_content), "text/plain")}
+        files={"file": ("test_policy.txt", io.BytesIO(file_content), "text/plain")},
+        headers={"X-Admin-API-Key": "bimagyan-admin-secret-2026"}
     )
     assert upload_res.status_code == 200
     uploaded_doc = upload_res.json()

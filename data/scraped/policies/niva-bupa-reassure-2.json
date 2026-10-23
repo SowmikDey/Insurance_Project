@@ -1,0 +1,121 @@
+{
+  "slug": "niva-bupa-reassure-2",
+  "identity": {
+    "insurer_name": "Niva Bupa Health Insurance Company Limited",
+    "uin_number": "MAXHLIP23030V022223",
+    "product_name": "Niva Bupa ReAssure 2.0 Platinum+",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Family Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "91 days to 30 years",
+    "eligibility_criteria": "Lifelong renewability, Indian residents.",
+    "policy_tenure": "1, 2, or 3 Years",
+    "renewal_terms": "AgeLock feature: Your entry-age premium locks until you make your first claim.",
+    "portability_conditions": "Portability as per IRDAI guidelines.",
+    "geographic_availability": "Pan-India coverage with no zone co-payments.",
+    "effective_version_date": null
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹5 Lakh",
+      "₹7.5 Lakh",
+      "₹10 Lakh",
+      "₹15 Lakh",
+      "₹20 Lakh",
+      "₹25 Lakh",
+      "₹50 Lakh",
+      "₹1 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to Sum Insured for all hospitalization costs.",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 180,
+    "daycare_procedures": "All daycare procedures covered without sub-limits.",
+    "domiciliary_hospitalization": "Covered up to base Sum Insured.",
+    "home_healthcare": "Covered for specified treatments at home.",
+    "ayush_treatment": "Covered up to base Sum Insured in government AYUSH centers.",
+    "ambulance_cover": "Road ambulance covered up to actuals; Air ambulance up to ₹2.5 Lakh.",
+    "organ_donor_expenses": "Covered up to Sum Insured.",
+    "modern_treatments": "Covered up to Sum Insured without capping.",
+    "maternity_cover": "Not covered in Platinum+ variant.",
+    "opd_dental_vision": "Accidental dental/eye care covered.",
+    "restoration_benefit": "ReAssure+ Forever: Unlimited restoration triggered after first claim, stays active forever.",
+    "cumulative_bonus": "Booster+: Unused sum insured carries forward up to 5x to 10x base cover.",
+    "wellness_benefits": "Live Healthy wellness program with up to 30% discount on renewal premium based on step count.",
+    "critical_illness_rider": "Optional critical illness rider."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 36,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic surgery and beauty treatments",
+      "Bariatric surgery unless life-threatening",
+      "Alcohol or substance abuse",
+      "Self-inflicted injuries",
+      "Experimental medical procedures"
+    ],
+    "room_rent_capping": "No Room Rent Capping (Any room category: Single Private AC, Shared, or Deluxe). Zero proportionate deduction.",
+    "icu_sub_limit": "No ICU sub-limit (Covered up to Sum Insured).",
+    "disease_sub_limits": {},
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "None (Pan-India uniform cover).",
+    "pre_authorization_rules": "48 hours prior for planned, 24 hours for emergency.",
+    "medical_necessity_clause": "IRDAI medical necessity standards apply.",
+    "non_payable_items": "Covered if Safeguard+ rider is selected (pays for non-payable consumables)."
+  },
+  "premium": {
+    "indicative_annual_premium": 10200.0,
+    "pricing_factors": "Age at entry (locked via AgeLock until first claim), family size, sum insured.",
+    "tenure_discounts": "7.5% for 2 years, 10% for 3 years.",
+    "installment_options": "Annual, Half-yearly, Quarterly, Monthly.",
+    "tax_benefits": "Section 80D tax deduction up to ₹25,000 / ₹50,000.",
+    "medical_underwriting": "Tele-underwriting and medical checkup as per underwriting grid.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "Full refund within 15 days free-look; pro-rata short period thereafter.",
+    "optional_riders": [
+      "Safeguard+ (Consumables)",
+      "Hospital Daily Cash",
+      "Personal Accident Rider"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Present Niva Bupa Health Card at network hospital -> approval in 30 minutes.",
+    "reimbursement_claim_procedure": "File via Niva Bupa Health App -> upload bills -> fast reimbursement.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Claim form",
+      "Discharge summary",
+      "Itemized final bill",
+      "Pharmacy bills",
+      "Investigation reports"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Grievance: 1860-500-8888 / customerfirst@nivabupa.com / Insurance Ombudsman.",
+    "cashless_hospital_network_size": 10500,
+    "tpa_support": "In-House Claim Settlement (Fast 30-min cashless processing).",
+    "turnaround_time_cashless_hours": 0.5,
+    "claim_settlement_ratio": 96.1,
+    "incurred_claim_ratio": 64.5
+  },
+  "provenance": {
+    "policy_wording_url": "https://www.nivabupa.com/",
+    "cis_document_url": null,
+    "brochure_url": null,
+    "prospectus_url": null,
+    "proposal_form_url": null,
+    "uin_history": "MAXHLIP23030V022223 (Revision 2, 2022-2023)",
+    "approval_date": "2022-07-28",
+    "publication_date": "2022-08-15",
+    "withdrawn_predecessor_plans": null,
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular 2020"
+    ],
+    "source_url": "https://joinditto.in/health-insurance/max-bupa/reassure-2-platinum/",
+    "retrieval_timestamp": "2026-10-23T11:32:17.861249Z",
+    "document_sha256": null
+  }
+}

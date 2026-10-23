@@ -1,0 +1,131 @@
+{
+  "slug": "new-india-mediclaim-policy",
+  "identity": {
+    "insurer_name": "The New India Assurance Company Limited",
+    "uin_number": "NIAHLIP21178V042021",
+    "product_name": "New India Mediclaim Policy",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Family Floater / Uplift",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "3 months to 25 years (dependent)",
+    "eligibility_criteria": "Indian residents, lifelong renewal, no exit age once enrolled.",
+    "policy_tenure": "1 Year",
+    "renewal_terms": "Lifelong guaranteed renewability with no loading on renewal premium based on claims history.",
+    "portability_conditions": "Portability allowed as per IRDAI guidelines with minimum 45 days prior notice before renewal date.",
+    "geographic_availability": "Pan-India (Zone I: Metro, Zone II: Tier 1, Zone III: Rest of India)",
+    "effective_version_date": "2021-04-01"
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹1,00,000",
+      "₹2,00,000",
+      "₹3,00,000",
+      "₹5,00,000",
+      "₹8,00,000",
+      "₹10,00,000",
+      "₹15,00,000",
+      "₹1 Crore (UPLIFT)",
+      "₹2 Crore",
+      "₹3 Crore",
+      "₹5 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to Sum Insured for room, nursing, boarding, surgeon and specialist fees.",
+    "pre_hospitalization_days": 30,
+    "post_hospitalization_days": 60,
+    "daycare_procedures": "All daycare procedures covered where 24-hour hospitalization is not required due to technological advancement.",
+    "domiciliary_hospitalization": "Covered up to 20% of Sum Insured when treatment is taken at home due to patient condition or bed unavailability.",
+    "home_healthcare": "Covered for specified treatments up to sub-limits.",
+    "ayush_treatment": "Inpatient treatment covered in government recognized AYUSH hospitals up to 100% of Sum Insured.",
+    "ambulance_cover": "Road ambulance covered up to 1% of Sum Insured (max ₹15,000 under UPLIFT plans).",
+    "organ_donor_expenses": "Covered for harvesting expenses incurred on donor up to Sum Insured.",
+    "modern_treatments": "Upto 50% of Sum Insured for robotic surgery, stem cell therapy, deep brain stimulation, oral chemotherapy.",
+    "maternity_cover": "Covered under specific Uplift plan variants with 24-month waiting period.",
+    "opd_dental_vision": "Covered only if necessitated by accidental injury during in-hospital care.",
+    "restoration_benefit": "100% automatic reinstatement of Sum Insured once during policy year for unrelated illness.",
+    "cumulative_bonus": "Cumulative bonus of 5% of base Sum Insured for each claim-free year, up to a maximum of 50%.",
+    "wellness_benefits": "Free health checkup once at the end of every 3 continuous claim-free renewal years.",
+    "critical_illness_rider": "Optional Critical Illness and Personal Accident rider available at additional premium."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 48,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic and aesthetic surgery",
+      "Weight control and bariatric surgery unless medically prescribed",
+      "Substance abuse, alcohol or drug rehabilitation",
+      "Self-inflicted injuries or suicide attempts",
+      "War, invasion, acts of foreign enemy, nuclear perils",
+      "Experimental, unproven, or unapproved pharmacological treatments"
+    ],
+    "room_rent_capping": "1% of Sum Insured per day for Normal Room, 2% of Sum Insured per day for ICU charges. Proportionate deduction applies if exceeded.",
+    "icu_sub_limit": "2% of Sum Insured per day.",
+    "disease_sub_limits": {
+      "Cataract": "Up to ₹25,000 or 10% of Sum Insured per eye (whichever is lower)",
+      "Hernia": "Up to ₹40,000 or 25% of Sum Insured",
+      "Joint Replacement": "Up to ₹1,50,000 per joint (after 24-month waiting period)"
+    },
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "Zone I: Greater Mumbai and Delhi NCR. Zone II: State Capitals and Tier-1 cities. Zone III: Rest of India. 10-20% co-pay applies if treated in higher zone without paying zone differential premium.",
+    "pre_authorization_rules": "Pre-authorization required at least 48 hours prior for planned admissions, within 24 hours for emergencies.",
+    "medical_necessity_clause": "Treatment must be medically necessary, prescribed by a qualified medical practitioner, and conform to standard medical practice.",
+    "non_payable_items": "Consumables and non-medical items (as per IRDAI list of non-payable items) are not reimbursed unless optional rider is opted."
+  },
+  "premium": {
+    "indicative_annual_premium": 8450.0,
+    "pricing_factors": "Age of the eldest member, zone of residence, chosen sum insured, and tobacco use status.",
+    "tenure_discounts": "5% discount on 2-year policy tenure; 7.5% discount on 3-year policy tenure.",
+    "installment_options": "Annual, Half-yearly, or Quarterly installment facilities available with ECS/NACH.",
+    "tax_benefits": "Tax rebate under Section 80D of the Income Tax Act up to ₹25,000 (individual/family) and up to ₹50,000 (senior citizens).",
+    "medical_underwriting": "Mandatory pre-policy medical checkup for applicants aged 50 years and above (50% cost reimbursed upon acceptance).",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "Full refund within 15 days free-look period less stamp duty and medical test costs. Short-period pro-rata scale thereafter.",
+    "optional_riders": [
+      "Maternity and Newborn Child Extension Rider",
+      "Critical Illness Lump Sum Cover",
+      "Voluntary Co-pay Discount Option (10% or 20% discount)"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Show New India Health Card at hospital TPA desk -> TPA submits pre-auth request -> Cashless approval issued within 2 hours -> Cashless discharge finalized within 3 hours.",
+    "reimbursement_claim_procedure": "Intimate within 24h of emergency or before discharge -> Submit original discharge summary, prescriptions, hospital bills, and claim form within 30 days.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Duly filled and signed Claim Form",
+      "Original Discharge Summary with detailed clinical notes",
+      "Original itemized final hospital bill and numbered receipts",
+      "Prescriptions and diagnostic reports (X-Ray, MRI, Blood Tests, Histopathology)",
+      "Pharmacy cash memos accompanied by doctor prescriptions",
+      "KYC documents and cancelled cheque of policyholder"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Grievance Cell: 1800-209-1415 / grievance.nia@newindia.co.in. Escalation to Insurance Ombudsman within 1 year if unresolved within 30 days.",
+    "cashless_hospital_network_size": 9500,
+    "tpa_support": "Serviced through multiple empanelled TPAs (Medi Assist, Paramount, MDIndia, Heritage Health) and In-house Health TPA.",
+    "turnaround_time_cashless_hours": 2.0,
+    "claim_settlement_ratio": 92.8,
+    "incurred_claim_ratio": 98.4
+  },
+  "provenance": {
+    "policy_wording_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Policy  Clause_ New India Mediclaim Policy .pdf",
+    "cis_document_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Customer information sheet _ New India Mediclaim Policy.pdf",
+    "brochure_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/1 New India Mediclaim Pamphlet.pdf",
+    "prospectus_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Prospectus New India Mediclaim Policy final.pdf",
+    "proposal_form_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/ProposalFormNewIndiaMediclaim.pdf",
+    "uin_history": "NIAHLIP21178V042021 (Revision 4 replacing V032018)",
+    "approval_date": "2021-04-12",
+    "publication_date": "2021-05-01",
+    "withdrawn_predecessor_plans": "New India Mediclaim Policy 2018 (V03)",
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular on Health Insurance (IRDAI/HLT/REG/CIR/194/07/2020)",
+      "Standardization of Health Insurance Clauses Guidelines"
+    ],
+    "source_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+    "retrieval_timestamp": "2026-10-23T11:32:12.975843Z",
+    "document_sha256": "67a81e3cf1beac7d9e3b2205aa92eec67bbf2e57d3ebed71eac941ab3b91e34a"
+  }
+}

@@ -1,16 +1,15 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional, List
 
 class QuizQuestionSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     order_index: int
     question: str
     options: List[str]
     correct_option_index: int
     explanation: str
-
-    class Config:
-        from_attributes = True
 
 class QuizSubmissionRequest(BaseModel):
     user_session_id: Optional[str] = None
@@ -24,6 +23,8 @@ class QuizResultResponse(BaseModel):
     results: List[dict]
 
 class LearningModuleListSchema(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     slug: str
     order_index: int
@@ -34,9 +35,6 @@ class LearningModuleListSchema(BaseModel):
     level: str
     is_completed: Optional[bool] = False
 
-    class Config:
-        from_attributes = True
-
 class LearningModuleDetailSchema(LearningModuleListSchema):
     concept_explanation: str
     why_it_matters: str
@@ -45,6 +43,3 @@ class LearningModuleDetailSchema(LearningModuleListSchema):
     key_takeaways: List[str] = []
     official_source_links: List[dict] = []
     quizzes: List[QuizQuestionSchema] = []
-
-    class Config:
-        from_attributes = True

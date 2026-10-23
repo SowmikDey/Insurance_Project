@@ -3,7 +3,7 @@ import { useGlossary } from '../context/GlossaryContext';
 import { ExternalLink, HelpCircle, ArrowRight } from 'lucide-react';
 
 export const GlossaryPopover = () => {
-  const { activeTerm, popoverPos, handleMouseEnter, handleMouseLeave, openFullModal } = useGlossary();
+  const { activeTerm, popoverPos, cancelClose, handleMouseLeave, openFullModal } = useGlossary();
 
   if (!activeTerm) return null;
 
@@ -11,17 +11,22 @@ export const GlossaryPopover = () => {
     <div
       role="tooltip"
       aria-live="polite"
-      className="fixed z-50 w-88 bg-white rounded-xl shadow-xl border border-slate-200 p-4 transition-all duration-200 animate-in fade-in zoom-in-95"
+      className="fixed z-50 w-88 max-w-[calc(100vw-32px)] bg-white rounded-xl shadow-2xl border border-slate-200 p-4 transition-all duration-150 animate-in fade-in zoom-in-95 pointer-events-auto"
       style={{
-        top: `${popoverPos.top}px`,
-        left: `${popoverPos.left}px`,
+        top: popoverPos.top,
+        bottom: popoverPos.bottom,
+        left: popoverPos.left,
       }}
-      onMouseEnter={() => {
-        // Keep popover open while hovering directly inside it
-        handleMouseEnter(activeTerm.slug, { currentTarget: { getBoundingClientRect: () => ({ left: popoverPos.left, bottom: popoverPos.top - 8 }) } });
-      }}
+      onMouseEnter={cancelClose}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Visual orientation pointer */}
+      {popoverPos.placement === 'bottom' && (
+        <div className="absolute -top-1.5 left-6 w-3 h-3 bg-white border-t border-l border-slate-200 rotate-45" />
+      )}
+      {popoverPos.placement === 'top' && (
+        <div className="absolute -bottom-1.5 left-6 w-3 h-3 bg-white border-b border-r border-slate-200 rotate-45" />
+      )}
       <div className="flex items-center justify-between pb-2 border-b border-slate-100">
         <div className="flex items-center gap-1.5">
           <HelpCircle className="w-4 h-4 text-teal-700" />

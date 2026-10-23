@@ -1,9 +1,21 @@
 import os
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import Optional
+from dotenv import load_dotenv
+
+backend_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+env_path = os.path.join(backend_dir, ".env")
+if os.path.exists(env_path):
+    load_dotenv(env_path)
+else:
+    load_dotenv()
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=(os.path.join(backend_dir, ".env"), ".env"),
+        env_file_encoding="utf-8",
+        extra="ignore"
+    )
 
     PROJECT_NAME: str = "BimaGyan - AI Insurance Platform India"
     API_V1_STR: str = "/api/v1"

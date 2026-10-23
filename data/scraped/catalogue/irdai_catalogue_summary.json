@@ -1,0 +1,38 @@
+{
+  "total_products_scraped": 40,
+  "pages_scraped": 3,
+  "unique_insurers_count": 21,
+  "insurers_list": [
+    "Bajaj Allianz General Insuarnce Co. Ltd",
+    "Bajaj Allianz General Insurance Co. Ltd.",
+    "Cholamandalam MS General Insurance Company Limited",
+    "Edelweiss General Insurance Co. Ltd.",
+    "Future Generali India Insurance Co. Ltd.",
+    "Go Digit General Insurance Co.Ltd",
+    "HDFC ERGO General Insurance Company Limited.",
+    "HDFC ERGO General Insurance company Ltd",
+    "ICICI Lombard GIC Ltd",
+    "Kotak Mahindra General Insurance Co. Ltd.",
+    "Manipal Cigna Health Insurance Co. Ltd.",
+    "Navi General Insurance Ltd.",
+    "Niva Bupa Health Insurance Company Limited",
+    "Raheja QBE General Insurance Co",
+    "Royal Sundaram Gen Ins Co ltd",
+    "SBI General Insurance Company Limited",
+    "Shriram General Insurance Co. Ltd",
+    "Star Health And Allied Insurance Co. Ltd",
+    "The New India Assurance Company Limited",
+    "The Oriental Insurance Company Limited",
+    "Universal Sompo General Insurance Co."
+  ],
+  "product_types": [
+    "Add on",
+    "Add-on",
+    "Group",
+    "Health",
+    "Health Individual",
+    "Individual",
+    "Revision"
+  ],
+  "timestamp": "2026-10-23T11:31:11Z"
+}

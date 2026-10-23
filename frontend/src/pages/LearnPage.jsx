@@ -18,6 +18,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { HighlightedText } from '../components/HighlightedText';
+import { FormattedExplanation } from '../components/FormattedExplanation';
 
 export const LearnPage = () => {
   const { moduleSlug } = useParams();
@@ -190,9 +191,7 @@ export const LearnPage = () => {
             <BookOpen className="w-4 h-4 text-teal-700" />
             Core Concept Explanation
           </div>
-          <div className="text-sm text-slate-700 leading-relaxed space-y-4">
-            <HighlightedText text={activeModule.concept_explanation} />
-          </div>
+          <FormattedExplanation content={activeModule.concept_explanation} textColor="text-slate-700" />
         </section>
 
         {/* 2. Why It Matters */}
@@ -201,9 +200,7 @@ export const LearnPage = () => {
             <ShieldCheck className="w-4 h-4 text-indigo-700" />
             Why This Concept Matters Before You Buy
           </div>
-          <div className="text-sm text-slate-700 leading-relaxed">
-            <HighlightedText text={activeModule.why_it_matters} />
-          </div>
+          <FormattedExplanation content={activeModule.why_it_matters} textColor="text-slate-700" />
         </section>
 
         {/* 3. Practical Indian Rupee Example */}
@@ -212,9 +209,7 @@ export const LearnPage = () => {
             <IndianRupee className="w-4 h-4 text-amber-700" />
             Everyday Practical Indian Example
           </div>
-          <div className="text-sm text-amber-950/90 leading-relaxed font-normal">
-            <HighlightedText text={activeModule.practical_indian_example} />
-          </div>
+          <FormattedExplanation content={activeModule.practical_indian_example} textColor="text-amber-950/90" />
         </section>
 
         {/* 4. Common Mistakes & Misconceptions */}

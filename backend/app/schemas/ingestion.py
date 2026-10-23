@@ -103,3 +103,11 @@ class JobRunRequest(BaseModel):
     source_id: Optional[int] = None
     url: Optional[str] = None
     job_type: str = "FETCH_DOC"
+
+class MarketUpdatesApplyRequest(BaseModel):
+    items: List[Dict[str, Any]]
+    applied_by: Optional[str] = "Admin"
+
+class PolicyStatusUpdateRequest(BaseModel):
+    status: str
+    reason: Optional[str] = None

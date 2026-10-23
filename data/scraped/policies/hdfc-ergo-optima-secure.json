@@ -1,0 +1,119 @@
+{
+  "slug": "hdfc-ergo-optima-secure",
+  "identity": {
+    "insurer_name": "HDFC ERGO General Insurance Company Limited",
+    "uin_number": "HDFHLIP23024V072223",
+    "product_name": "HDFC ERGO Optima Secure",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Family Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "91 days to 25 years",
+    "eligibility_criteria": "Lifelong renewability, Indian residents.",
+    "policy_tenure": "1, 2, or 3 Years",
+    "renewal_terms": "Lifelong guaranteed renewal, no claim loading.",
+    "portability_conditions": "Portability allowed as per IRDAI master circular.",
+    "geographic_availability": "Pan-India (Tier-1, Tier-2, Tier-3 with no zone penalties)",
+    "effective_version_date": null
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹5 Lakh",
+      "₹10 Lakh",
+      "₹15 Lakh",
+      "₹20 Lakh",
+      "₹25 Lakh",
+      "₹50 Lakh",
+      "₹1 Crore",
+      "₹2 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to 100% of Sum Insured without room sub-limits.",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 180,
+    "daycare_procedures": "All daycare procedures covered.",
+    "domiciliary_hospitalization": "Covered up to base Sum Insured.",
+    "home_healthcare": "Covered for doctor-prescribed home treatments.",
+    "ayush_treatment": "Covered up to Sum Insured in government recognized institutions.",
+    "ambulance_cover": "Road ambulance covered up to actuals; Air ambulance up to ₹5 Lakh.",
+    "organ_donor_expenses": "Covered up to Sum Insured for harvesting costs.",
+    "modern_treatments": "Covered up to Sum Insured for modern treatments without capping.",
+    "maternity_cover": "Not covered in base Optima Secure plan.",
+    "opd_dental_vision": "Emergency dental/ophthalmic care due to accident covered.",
+    "restoration_benefit": "100% restore benefit automatically kicks in immediately upon first claim.",
+    "cumulative_bonus": "Plus Benefit: Doubles your base cover by 50% in year 1 and 50% in year 2 regardless of claims.",
+    "wellness_benefits": "Preventive health check-up every renewal year irrespective of claim status.",
+    "critical_illness_rider": "Optional critical illness rider."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 36,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic and aesthetic surgeries",
+      "Obesity treatment and weight reduction",
+      "Alcohol or drug abuse treatment",
+      "Unproven and experimental therapies",
+      "Self-inflicted injuries"
+    ],
+    "room_rent_capping": "No Room Rent Capping (Any room category including Single Private AC Room or Deluxe). Zero proportionate deduction.",
+    "icu_sub_limit": "No ICU sub-limit (Actual charges covered).",
+    "disease_sub_limits": {},
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "None (Pan-India uniform coverage).",
+    "pre_authorization_rules": "Pre-authorization required 48h prior for planned, 24h for emergency.",
+    "medical_necessity_clause": "Standard IRDAI medical necessity clause applies.",
+    "non_payable_items": "Protect Benefit included by default: 100% coverage for consumables, gloves, masks, and non-medical items."
+  },
+  "premium": {
+    "indicative_annual_premium": 10800.0,
+    "pricing_factors": "Age of oldest insured, family structure, sum insured.",
+    "tenure_discounts": "7.5% for 2 years, 10% for 3 years.",
+    "installment_options": "Annual, Half-Yearly, Quarterly, Monthly.",
+    "tax_benefits": "Section 80D income tax exemption up to ₹25,000 / ₹50,000.",
+    "medical_underwriting": "Pre-policy medical examination determined by age and declared history.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "Full refund within 15 days; pro-rata short period cancellation scale thereafter.",
+    "optional_riders": [
+      "My:Health Critical Illness Rider",
+      "Hospital Daily Cash"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Present HDFC ERGO health e-card at hospital insurance desk -> cashless approval within 1 hour.",
+    "reimbursement_claim_procedure": "Intimate via HDFC ERGO Here App -> submit documents online -> settled within 7 days.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Claim form",
+      "Discharge summary",
+      "Original bills and receipts",
+      "Investigation reports"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Grievance Cell: 1800-2666 / grievance@hdfcergo.com / Insurance Ombudsman.",
+    "cashless_hospital_network_size": 13000,
+    "tpa_support": "In-House Claims Team (Direct cashless settlement).",
+    "turnaround_time_cashless_hours": 1.0,
+    "claim_settlement_ratio": 97.5,
+    "incurred_claim_ratio": 78.2
+  },
+  "provenance": {
+    "policy_wording_url": "https://www.hdfcergo.com/health-insurance",
+    "cis_document_url": null,
+    "brochure_url": null,
+    "prospectus_url": null,
+    "proposal_form_url": null,
+    "uin_history": "HDFHLIP23024V072223 (Revision 7, 2022-2023)",
+    "approval_date": "2022-05-20",
+    "publication_date": "2022-06-01",
+    "withdrawn_predecessor_plans": null,
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular 2020"
+    ],
+    "source_url": "https://joinditto.in/health-insurance/hdfc-ergo/optima-secure/",
+    "retrieval_timestamp": "2026-10-23T11:32:15.791959Z",
+    "document_sha256": null
+  }
+}

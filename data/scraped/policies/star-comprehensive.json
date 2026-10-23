@@ -1,0 +1,128 @@
+{
+  "slug": "star-comprehensive",
+  "identity": {
+    "insurer_name": "Star Health and Allied Insurance Company Limited",
+    "uin_number": "SHAHLIP26044V092526",
+    "product_name": "Star Comprehensive Insurance Policy",
+    "policy_type": "Health Indemnity",
+    "plan_variant": "Individual / Floater",
+    "entry_age_min": 18,
+    "entry_age_max": 65,
+    "dependent_child_age_limit": "91 days to 25 years (dependent)",
+    "eligibility_criteria": "Indian residents aged 18 to 65 years. Lifelong renewability guaranteed.",
+    "policy_tenure": "1 Year / 2 Years / 3 Years",
+    "renewal_terms": "Guaranteed lifelong renewal without exit age. 30 days grace period for annual renewals.",
+    "portability_conditions": "Portability allowed as per IRDAI health regulations with minimum 45 days prior notice.",
+    "geographic_availability": "Pan-India coverage across all network hospitals.",
+    "effective_version_date": "2025-06-01"
+  },
+  "coverage": {
+    "sum_insured_options": [
+      "₹5,00,000",
+      "₹7,50,000",
+      "₹10,00,000",
+      "₹15,00,000",
+      "₹20,00,000",
+      "₹25,00,000",
+      "₹50,00,000",
+      "₹1 Crore"
+    ],
+    "inpatient_hospitalization": "Covered up to Sum Insured for room boarding, nursing, surgeon, anesthesiologist, and medical specialist expenses.",
+    "pre_hospitalization_days": 60,
+    "post_hospitalization_days": 90,
+    "daycare_procedures": "All daycare procedures covered where technological advances do not necessitate 24-hour hospitalization.",
+    "domiciliary_hospitalization": "Covered for medical treatment exceeding 3 days when patient cannot be moved to hospital.",
+    "home_healthcare": "Covered for specified treatment procedures administered at home up to sub-limits.",
+    "ayush_treatment": "Inpatient treatment covered in government-recognized AYUSH hospitals up to 100% of Sum Insured.",
+    "ambulance_cover": "Road ambulance charges up to ₹2,000 per hospitalization. Air ambulance up to ₹2,50,000 per policy year (for SI ₹5L+).",
+    "organ_donor_expenses": "Covered up to Sum Insured for complications arising during harvesting of organ.",
+    "modern_treatments": "Covered up to 50% of Sum Insured for robotic surgeries, deep brain stimulation, and stem cell therapy.",
+    "maternity_cover": "Covered after 24 months continuous coverage: normal delivery up to ₹50,000, cesarean up to ₹1,00,000. Newborn cover from day 1.",
+    "opd_dental_vision": "Outpatient consultations, dental, and ophthalmic treatment covered up to specified limits after 3 years.",
+    "restoration_benefit": "100% automatic restoration of Sum Insured available once per policy year upon partial or full exhaustion.",
+    "cumulative_bonus": "Cumulative bonus of 50% for 1st claim-free year, 100% for 2nd claim-free year (maximum 100% of SI).",
+    "wellness_benefits": "Star Wellness Program offers premium discounts up to 10% through healthy lifestyle tracking points.",
+    "critical_illness_rider": "Second medical opinion included; optional accidental death and permanent total disability cover included."
+  },
+  "restrictions": {
+    "initial_waiting_period_days": 30,
+    "ped_waiting_period_months": 36,
+    "specific_disease_waiting_months": 24,
+    "permanent_exclusions": [
+      "Cosmetic and aesthetic treatments",
+      "Weight control and bariatric treatment without severe medical indication",
+      "Alcohol, drug addiction and substance abuse rehabilitation",
+      "Self-inflicted injuries or attempt to commit suicide",
+      "War, nuclear perils, participation in hazardous adventure sports",
+      "Experimental, investigational and unproven medical interventions"
+    ],
+    "room_rent_capping": "No Room Rent Capping for Sum Insured ₹5 Lakh and above (Single Private AC room allowed). Zero proportionate deduction.",
+    "icu_sub_limit": "No Sub-limit on ICU charges (Actuals up to Sum Insured).",
+    "disease_sub_limits": {
+      "Cataract": "Up to ₹25,000 to ₹40,000 per eye depending on Sum Insured",
+      "Bariatric Surgery": "Covered up to ₹2,50,000 to ₹5,00,000 after 36 months waiting period",
+      "Maternity Normal Delivery": "Up to ₹50,000",
+      "Maternity Cesarean": "Up to ₹1,00,000"
+    },
+    "copay_percentage": 0,
+    "deductible_amount": 0.0,
+    "zone_based_restrictions": "No zone-based restrictions or co-payment deductions across pan-India hospitals.",
+    "pre_authorization_rules": "Planned hospitalizations require cashless pre-authorization 48 hours prior; emergency within 24 hours of admission.",
+    "medical_necessity_clause": "Treatment must be prescribed by a registered medical practitioner and conform to standard accepted medical protocols.",
+    "non_payable_items": "Consumables excluded unless optional Star Extra Protect add-on is opted."
+  },
+  "premium": {
+    "indicative_annual_premium": 12400.0,
+    "pricing_factors": "Age of oldest member, sum insured tier, floater size, and multi-year tenure discounts.",
+    "tenure_discounts": "10% discount on 2-year tenure; 11.25% discount on 3-year tenure.",
+    "installment_options": "Annual, Half-yearly, and Quarterly premium installment facilities available.",
+    "tax_benefits": "Deduction up to ₹25,000 under Section 80D (₹50,000 for senior citizens).",
+    "medical_underwriting": "Pre-acceptance medical screening required for applicants aged 50+ or with disclosed pre-existing conditions.",
+    "free_look_period_days": 15,
+    "cancellation_refund_terms": "Full premium refund minus stamp duty and medical test charges during 15-day free-look period.",
+    "optional_riders": [
+      "Star Extra Protect Add-on (Consumables, Enhanced NCB, Room Rent upgrade)",
+      "Hospital Cash Add-on"
+    ]
+  },
+  "claims": {
+    "cashless_claim_procedure": "Present Star Health ID card at network hospital cashless counter -> Hospital raises pre-auth -> Instant approval or within 2 hours -> Cashless discharge upon final claim bill.",
+    "reimbursement_claim_procedure": "Submit duly completed claim form, original final hospital bill, discharge card, and diagnostic reports within 30 days of discharge.",
+    "emergency_intimation_hours": 24,
+    "planned_intimation_hours": 48,
+    "required_claim_documents": [
+      "Duly completed Star Health Claim Form",
+      "Original Discharge Summary with doctor's clinical history notes",
+      "Original numbered hospital final bill with break-up and receipt",
+      "Diagnostic reports (pathology, radiology, ECG) with prescription receipts",
+      "Doctor's prescriptions for medicines purchased and medical reports",
+      "KYC documents and cancelled cheque of proposer"
+    ],
+    "claim_submission_deadline_days": 30,
+    "grievance_redressal_details": "Toll-Free: 1800-425-2255 / 1800-102-4477 | Email: grievances@starhealth.in | Escalation to IRDAI Bima Bharosa & Insurance Ombudsman.",
+    "cashless_hospital_network_size": 14000,
+    "tpa_support": "In-House Claims Administration (Direct settlement with no third-party TPA intervention).",
+    "turnaround_time_cashless_hours": 2.0,
+    "claim_settlement_ratio": 90.3,
+    "incurred_claim_ratio": 65.2
+  },
+  "provenance": {
+    "policy_wording_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+    "cis_document_url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf",
+    "brochure_url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Comprehensive_Insurance_Policy_V_15_Web_633bcfcaaf.pdf",
+    "prospectus_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+    "proposal_form_url": "https://d28c6jni2fmamz.cloudfront.net/Offline_Proposal_Form_138e10d5db.pdf",
+    "uin_history": "SHAHLIP26044V092526 (Revision 9 replacing V082024)",
+    "approval_date": "2025-05-15",
+    "publication_date": "2025-06-01",
+    "withdrawn_predecessor_plans": "Star Comprehensive Insurance Policy V.08",
+    "governing_regulations": [
+      "IRDAI (Health Insurance) Regulations, 2016",
+      "IRDAI Master Circular on Operations and Allied Matters 2024",
+      "IRDAI Guidelines on Standardization of General Terms and Exclusions"
+    ],
+    "source_url": "https://www.starhealth.in/downloads/",
+    "retrieval_timestamp": "2026-10-23T11:44:28.949998Z",
+    "document_sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665"
+  }
+}

@@ -135,6 +135,15 @@ export const PolicyDetailsPage = () => {
               <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-800 border border-teal-200/60">
                 {policy.category?.name || 'Insurance'}
               </span>
+              {policy.status && policy.status !== 'CURRENT' && (
+                <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
+                  policy.status === 'WITHDRAWN' ? 'bg-rose-50 text-rose-800 border-rose-200' :
+                  policy.status === 'NEEDS_REVIEW' ? 'bg-amber-50 text-amber-800 border-amber-200' :
+                  'bg-slate-100 text-slate-700 border-slate-200'
+                }`}>
+                  {policy.status.replace('_', ' ')}
+                </span>
+              )}
               <span className="text-xs text-slate-500 font-mono">
                 UIN: {policy.uin_number || 'Registered with IRDAI'}
               </span>
@@ -313,37 +322,139 @@ export const PolicyDetailsPage = () => {
                     {coverageStr}
                   </span>
                 </div>
+
+                {policy.day_care_procedures && (
+                  <div 
+                    onClick={() => openFieldModal('day_care_procedures', policy.day_care_procedures)}
+                    className="p-4 bg-slate-50 hover:bg-teal-50/60 rounded-xl border border-slate-200/80 hover:border-teal-300 transition-all cursor-pointer group"
+                    title="Click to view day care procedures details"
+                  >
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                      <span>Day Care Procedures</span>
+                      <HelpCircle className="w-3.5 h-3.5 text-slate-400 group-hover:text-teal-700 transition-colors" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 block mt-1 group-hover:text-teal-900">
+                      <HighlightedText text={policy.day_care_procedures} />
+                    </span>
+                  </div>
+                )}
+
+                {policy.ayush_treatment && policy.ayush_treatment !== 'N/A' && (
+                  <div 
+                    onClick={() => openFieldModal('ayush_treatment', policy.ayush_treatment)}
+                    className="p-4 bg-slate-50 hover:bg-teal-50/60 rounded-xl border border-slate-200/80 hover:border-teal-300 transition-all cursor-pointer group"
+                    title="Click to view AYUSH treatment details"
+                  >
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                      <span>AYUSH Hospitalization</span>
+                      <HelpCircle className="w-3.5 h-3.5 text-slate-400 group-hover:text-teal-700 transition-colors" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 block mt-1 group-hover:text-teal-900">
+                      <HighlightedText text={policy.ayush_treatment} />
+                    </span>
+                  </div>
+                )}
+
+                {policy.health_checkup && policy.health_checkup !== 'N/A' && (
+                  <div 
+                    onClick={() => openFieldModal('health_checkup', policy.health_checkup)}
+                    className="p-4 bg-slate-50 hover:bg-teal-50/60 rounded-xl border border-slate-200/80 hover:border-teal-300 transition-all cursor-pointer group"
+                    title="Click to view preventive health checkup details"
+                  >
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                      <span>Preventive Health Checkup</span>
+                      <HelpCircle className="w-3.5 h-3.5 text-slate-400 group-hover:text-teal-700 transition-colors" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 block mt-1 group-hover:text-teal-900">
+                      <HighlightedText text={policy.health_checkup} />
+                    </span>
+                  </div>
+                )}
+
+                {policy.ambulance_cover && policy.ambulance_cover !== 'N/A' && (
+                  <div 
+                    onClick={() => openFieldModal('ambulance_cover', policy.ambulance_cover)}
+                    className="p-4 bg-slate-50 hover:bg-teal-50/60 rounded-xl border border-slate-200/80 hover:border-teal-300 transition-all cursor-pointer group"
+                    title="Click to view emergency ambulance details"
+                  >
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                      <span>Emergency Ambulance</span>
+                      <HelpCircle className="w-3.5 h-3.5 text-slate-400 group-hover:text-teal-700 transition-colors" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 block mt-1 group-hover:text-teal-900">
+                      <HighlightedText text={policy.ambulance_cover} />
+                    </span>
+                  </div>
+                )}
+
+                {policy.entry_age_min !== null && policy.entry_age_min !== undefined && (
+                  <div 
+                    onClick={() => openFieldModal('entry_age', `${policy.entry_age_min} to ${policy.entry_age_max || 'No upper limit'} Years`)}
+                    className="p-4 bg-slate-50 hover:bg-teal-50/60 rounded-xl border border-slate-200/80 hover:border-teal-300 transition-all cursor-pointer group"
+                    title="Click to view entry age details"
+                  >
+                    <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                      <span>Entry Age &amp; Renewability</span>
+                      <HelpCircle className="w-3.5 h-3.5 text-slate-400 group-hover:text-teal-700 transition-colors" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 block mt-1 group-hover:text-teal-900">
+                      {policy.entry_age_min} - {policy.entry_age_max ? `${policy.entry_age_max} Yrs` : 'Lifelong'} {policy.renewal_lifetime ? '(Lifetime Renewal)' : ''}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 
             {/* Pros and Cons */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
-              <div className="bg-emerald-50/50 p-5 rounded-2xl border border-emerald-200/80 space-y-3">
-                <div className="flex items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-wider">
-                  <ThumbsUp className="w-4 h-4 text-emerald-700" /> Key Strengths (Pros)
-                </div>
-                <ul className="space-y-2">
-                  {policy.pros?.map((pro, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-emerald-950 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
-                      <span><HighlightedText text={pro} /></span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="space-y-3 pt-6 border-t border-slate-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <h3 className="text-sm font-bold text-slate-900">Key Strengths & Policy Limitations</h3>
+                <span className="text-[11px] text-slate-400">Grounded in official IRDAI filings & CIS policy disclosures</span>
               </div>
-
-              <div className="bg-rose-50/50 p-5 rounded-2xl border border-rose-200/80 space-y-3">
-                <div className="flex items-center gap-2 text-rose-900 font-bold text-xs uppercase tracking-wider">
-                  <ThumbsDown className="w-4 h-4 text-rose-700" /> Limitations & Caveats (Cons)
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-emerald-50/60 p-5 rounded-2xl border border-emerald-200/80 space-y-3">
+                  <div className="flex items-center justify-between text-emerald-900 font-bold text-xs uppercase tracking-wider">
+                    <span className="flex items-center gap-2">
+                      <ThumbsUp className="w-4 h-4 text-emerald-700" /> Key Strengths (Pros)
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">
+                      {policy.pros?.length || 0} Strengths
+                    </span>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {policy.pros?.map((pro, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-emerald-950 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
+                        <span><HighlightedText text={pro} /></span>
+                      </li>
+                    ))}
+                    {(!policy.pros || policy.pros.length === 0) && (
+                      <li className="text-xs text-slate-500 italic">No specific strengths documented yet.</li>
+                    )}
+                  </ul>
                 </div>
-                <ul className="space-y-2">
-                  {policy.cons?.map((con, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-rose-950 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600 mt-1.5 shrink-0" />
-                      <span><HighlightedText text={con} /></span>
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="bg-rose-50/60 p-5 rounded-2xl border border-rose-200/80 space-y-3">
+                  <div className="flex items-center justify-between text-rose-900 font-bold text-xs uppercase tracking-wider">
+                    <span className="flex items-center gap-2">
+                      <ThumbsDown className="w-4 h-4 text-rose-700" /> Limitations & Caveats (Cons)
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-bold">
+                      {policy.cons?.length || 0} Limitations
+                    </span>
+                  </div>
+                  <ul className="space-y-2.5">
+                    {policy.cons?.map((con, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs text-rose-950 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose-600 mt-1.5 shrink-0" />
+                        <span><HighlightedText text={con} /></span>
+                      </li>
+                    ))}
+                    {(!policy.cons || policy.cons.length === 0) && (
+                      <li className="text-xs text-slate-500 italic">No specific limitations documented yet.</li>
+                    )}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

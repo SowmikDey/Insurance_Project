@@ -21,6 +21,8 @@ class JobType:
     MANUAL_IMPORT = "MANUAL_IMPORT"
     DISCOVERY = "DISCOVERY"
     FULL_INGEST = "FULL_INGEST"
+    MARKET_SCAN = "MARKET_SCAN"
+    MARKET_UPDATE = "MARKET_UPDATE"
 
 class JobManager:
     """

@@ -17,8 +17,11 @@ from app.schemas.ingestion import (
     IngestionJobSchema,
     PolicyFactSchema,
     ScrapeRequest,
-    JobRunRequest
+    JobRunRequest,
+    MarketUpdatesApplyRequest,
+    PolicyStatusUpdateRequest
 )
+from app.services.ingestion.market_watch_service import MarketWatchService
 from app.services.ingestion.pdf_ingestor import PDFIngestor
 from app.services.ingestion.html_ingestor import HTMLIngestor
 from app.services.ingestion.normalizer import DocumentNormalizer
@@ -36,10 +39,18 @@ router = APIRouter(prefix="/ingestion", tags=["ingestion"])
 @router.get("/status", response_model=IngestionStatusResponse)
 def get_ingestion_status(db: Session = Depends(get_db)):
     """Provides overall metrics on indexed sources and chunks in PostgreSQL."""
+    from sqlalchemy import case
     total_sources = db.query(DocumentSource).count()
     total_chunks = db.query(DocumentChunk).count()
     processed_sources = db.query(DocumentSource).filter(DocumentSource.is_processed == True).count()
-    recent = db.query(DocumentSource).order_by(DocumentSource.created_at.desc()).limit(10).all()
+    # Sort: real SHA-256 hashes first (non-null), then by created_at desc
+    sha_order = case((DocumentSource.sha256_hash.isnot(None), 0), else_=1)
+    recent = (
+        db.query(DocumentSource)
+        .order_by(sha_order, DocumentSource.created_at.desc())
+        .limit(50)
+        .all()
+    )
     
     return IngestionStatusResponse(
         total_sources=total_sources,
@@ -86,21 +97,17 @@ async def upload_policy_document(
     if not file.filename.lower().endswith((".pdf", ".txt")):
         raise HTTPException(status_code=400, detail="Only PDF and TXT policy documents are supported.")
 
-    os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
-    file_save_path = os.path.join(settings.UPLOAD_DIR, file.filename)
     total_size = 0
-    max_size = 25 * 1024 * 1024  # 25 MiB
+    max_size = 25 * 1024 * 1024  # 25 MiB
     content_bytes = bytearray()
-    with open(file_save_path, "wb") as f:
-        while True:
-            chunk = await file.read(1024 * 1024)  # 1 MiB chunks
-            if not chunk:
-                break
-            total_size += len(chunk)
-            if total_size > max_size:
-                raise HTTPException(status_code=400, detail="File size exceeds 25MB limit.")
-            f.write(chunk)
-            content_bytes.extend(chunk)
+    while True:
+        chunk = await file.read(1024 * 1024)  # 1 MiB chunks
+        if not chunk:
+            break
+        total_size += len(chunk)
+        if total_size > max_size:
+            raise HTTPException(status_code=400, detail="File size exceeds 25MB limit.")
+        content_bytes.extend(chunk)
 
     doc_title = title or file.filename.replace(".pdf", "").replace("_", " ").title()
 
@@ -351,3 +358,64 @@ def run_ingestion_job(
         logger.exception("Pipeline run failed for job %s: %s", job.id, exc)
         job = JobManager.record_failed(db, job.id, str(exc))
     return job
+
+
+@router.get("/market-updates")
+def get_market_updates(db: Session = Depends(get_db)):
+    """
+    Scans registered market sources & IRDAI catalogue against existing database records.
+    Returns: new discoveries, detected revisions, status alerts, and policy inventory.
+    """
+    return MarketWatchService.scan_market(db)
+
+
+@router.post("/market-updates/scan")
+def trigger_market_scan(db: Session = Depends(get_db)):
+    """Triggers an on-demand market scan for newly filed policies and revisions."""
+    return MarketWatchService.scan_market(db)
+
+
+@router.post("/market-updates/apply")
+def apply_market_updates(
+    payload: MarketUpdatesApplyRequest,
+    db: Session = Depends(get_db)
+):
+    """
+    Applies admin-approved market updates.
+    Ingests brand new policies into DB or updates revisions to existing policies.
+    """
+    try:
+        result = MarketWatchService.apply_market_updates(
+            db,
+            items=payload.items,
+            applied_by=payload.applied_by or "Admin"
+        )
+        return result
+    except Exception as exc:
+        logger.exception("Failed to apply market updates: %s", exc)
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@router.patch("/policies/{policy_id}/status")
+def update_policy_status(
+    policy_id: int,
+    payload: PolicyStatusUpdateRequest,
+    db: Session = Depends(get_db)
+):
+    """
+    Updates the lifecycle status of an insurance policy (CURRENT, WITHDRAWN, NEEDS_REVIEW, SUPERSEDED).
+    Persists immediately to PostgreSQL and audits the change.
+    """
+    try:
+        result = MarketWatchService.update_policy_status(
+            db,
+            policy_id=policy_id,
+            new_status=payload.status,
+            reason=payload.reason
+        )
+        return result
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+    except Exception as exc:
+        logger.exception("Failed to update policy status: %s", exc)
+        raise HTTPException(status_code=500, detail=str(exc))
