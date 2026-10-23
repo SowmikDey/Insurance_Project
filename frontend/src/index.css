@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #F6F7F4;
+  --bg-card: #FFFFFF;
+  --text-primary: #25313B;
+  --text-secondary: #667085;
+  --accent-teal: #1B6B66;
+  --accent-teal-dark: #134E4A;
+  --accent-teal-light: #E8F2F1;
+  --border-subtle: #E2E8F0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F7F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Zerodha Varsity-Style Contextual Term Highlight */
+.glossary-term-highlight {
+  position: relative;
+  border-bottom: 2px dotted #1B6B66;
+  color: #1B6B66;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 1px;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.glossary-term-highlight:hover,
+.glossary-term-highlight:focus-visible {
+  background-color: #E8F2F1;
+  border-bottom-style: solid;
+  outline: none;
+  border-radius: 2px;
+}

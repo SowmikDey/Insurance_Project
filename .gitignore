@@ -1,0 +1,48 @@
+# Environments & Secrets
+.env
+.env.local
+*.env
+.env.test 
+docker-compose.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+*.sqlite3
+*.db
+insurance.db
+
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn-integrity
+
+# File Uploads & Temp Storage
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
+data/uploads/*
+!data/uploads/.gitkeep
+uploads/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+README.md
+start_all.ps1
+start_backend.bat 
+start_frontend.bat 
+test_debug.db 
