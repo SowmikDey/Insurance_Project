@@ -99,6 +99,20 @@ export const api = {
     return handleResponse(res);
   },
 
+  chatAssistantWithDocument: async (file, query, history = []) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('query', query);
+    formData.append('history', JSON.stringify(history));
+
+    const res = await fetch(`${API_BASE}/assistant/chat-document`, {
+      method: 'POST',
+      body: formData,
+    });
+    return handleResponse(res);
+  },
+
+
   // Ingestion & Admin
   getIngestionStatus: async () => {
     const res = await fetch(`${API_BASE}/ingestion/status`);
@@ -187,6 +201,28 @@ export const api = {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status, reason })
+    });
+    return handleResponse(res);
+  },
+
+  // Model Retraining & Cloudflare Edge Pipeline
+  getRetrainStatus: async () => {
+    const res = await fetch(`${API_BASE}/retrain/status`);
+    return handleResponse(res);
+  },
+
+  triggerRetrainPipeline: async () => {
+    const res = await fetch(`${API_BASE}/retrain/trigger`, {
+      method: 'POST'
+    });
+    return handleResponse(res);
+  },
+
+  updateRetrainConfig: async (config) => {
+    const res = await fetch(`${API_BASE}/retrain/config`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(config)
     });
     return handleResponse(res);
   }

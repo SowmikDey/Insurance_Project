@@ -1,7 +1,8 @@
 import os
 import logging
 from typing import Optional, List
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, Body
+import subprocess
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, UploadFile, File, Form, Body
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
@@ -419,3 +420,57 @@ def update_policy_status(
     except Exception as exc:
         logger.exception("Failed to update policy status: %s", exc)
         raise HTTPException(status_code=500, detail=str(exc))
+
+# ─── Training Dataset Rebuild & Retrain Trigger ──────────────────────────────
+
+def _run_dataset_builder_task():
+    """Background task: rebuilds training_data/train.jsonl + val.jsonl from all data sources."""
+    import pathlib
+    project_root = pathlib.Path(__file__).resolve().parents[3]
+    script = project_root / "backend" / "scripts" / "build_training_dataset.py"
+    try:
+        result = subprocess.run(
+            ["python", str(script)],
+            capture_output=True,
+            text=True,
+            timeout=300,
+            cwd=str(project_root)
+        )
+        if result.returncode == 0:
+            logger.info("Training dataset rebuild completed:\n%s", result.stdout[-2000:])
+        else:
+            logger.error("Training dataset rebuild failed:\n%s", result.stderr[-2000:])
+    except subprocess.TimeoutExpired:
+        logger.error("Training dataset rebuild timed out after 300 seconds")
+    except Exception as exc:
+        logger.exception("Training dataset rebuild error: %s", exc)
+
+
+@router.post(
+    "/trigger-retrain",
+    dependencies=[Depends(admin_api_key)],
+    summary="Rebuild training dataset and optionally trigger Kaggle fine-tuning",
+    tags=["ingestion"],
+)
+async def trigger_retrain(background_tasks: BackgroundTasks):
+    """
+    Admin-only endpoint that:
+    1. Queues a background rebuild of training_data/train.jsonl and val.jsonl
+       by running backend/scripts/build_training_dataset.py against all live data.
+    2. (Future) Can trigger Kaggle dataset upload + notebook re-run once
+       KAGGLE_USERNAME and KAGGLE_KEY env vars are set.
+
+    After the dataset is rebuilt, upload it to Kaggle manually or via
+    backend/scripts/upload_to_kaggle.py, then re-run the bimagyan_qlora_training
+    notebook to produce an updated merged model on Hugging Face.
+    """
+    background_tasks.add_task(_run_dataset_builder_task)
+    return {
+        "status": "queued",
+        "message": (
+            "Training dataset rebuild has been queued as a background task. "
+            "Check server logs for progress. Once complete, upload training_data/ "
+            "to Kaggle and re-run the bimagyan_qlora_training notebook."
+        ),
+    }
+

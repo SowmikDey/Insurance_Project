@@ -16,6 +16,7 @@ htmlcov/
 *.sqlite3
 *.db
 insurance.db
+test_debug.db
 
 # Node & Frontend
 node_modules/
@@ -26,6 +27,32 @@ dist-ssr/
 .yarn/cache
 .yarn/unplugged
 .yarn-integrity
+
+# Training Data (generated JSONL / CSV / JSON — reproducible, excluded from git)
+# Source scripts (build_training_dataset.py, notebook, deploy scripts) ARE tracked in git.
+training_data/*.jsonl
+training_data/*.csv
+training_data/*.json
+!training_data/package.json
+
+# Model Weights, Adapters & Checkpoints (large binaries stored on Kaggle / Cloudflare / HF)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+training_data/bimagyan_lora_cloudflare/
+unsloth_compiled_cache/
+huggingface_tokenizers_cache/
+.kaggle_staging*/
+
+# Cloudflare & Wrangler
+.wrangler/
+
+# Logs & Locks
+*.log
+*.lock
+.locks/
 
 # File Uploads & Temp Storage
 *.pdf
@@ -43,8 +70,6 @@ uploads/
 *.swo
 .DS_Store
 Thumbs.db
-README.md
 start_all.ps1
 start_backend.bat 
 start_frontend.bat 
-test_debug.db 

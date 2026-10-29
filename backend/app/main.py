@@ -11,6 +11,8 @@ from app.api.glossary import router as glossary_router
 from app.api.education import router as education_router
 from app.api.assistant import router as assistant_router
 from app.api.ingestion import router as ingestion_router
+from app.api.retrain import router as retrain_router
+from app.services.retrain_service import retrain_service
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("bimagyan")
@@ -34,6 +36,9 @@ async def lifespan(app: FastAPI):
         # Idempotently register official reference sources (ICICI Lombard link-only references)
         from app.services.ingestion.source_registry_service import seed_source_registry
         seed_source_registry(db)
+
+        # Start periodic background model retraining scheduler (1-month interval)
+        retrain_service.start_background_timer()
     except Exception as e:
         logger.error("Error during startup seed: %s", e)
     finally:
@@ -41,6 +46,7 @@ async def lifespan(app: FastAPI):
         
     yield
     logger.info("Shutting down application...")
+    retrain_service.stop_background_timer()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -65,6 +71,7 @@ app.include_router(glossary_router, prefix=api_v1_prefix)
 app.include_router(education_router, prefix=api_v1_prefix)
 app.include_router(assistant_router, prefix=api_v1_prefix)
 app.include_router(ingestion_router, prefix=api_v1_prefix)
+app.include_router(retrain_router, prefix=api_v1_prefix)
 
 @app.get("/")
 def root():

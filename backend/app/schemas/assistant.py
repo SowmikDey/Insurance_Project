@@ -22,4 +22,18 @@ class AssistantQueryResponse(BaseModel):
     answer: str
     citations: List[CitationItem] = []
     related_glossary_terms: List[str] = []
+    provider_used: Optional[str] = None  # "bimagyan" (Cloudflare Workers AI) or "deterministic"
     disclaimer: str = "This educational explanation is grounded in official policy wordings and IRDAI standards. It does not constitute licensed financial or legal advice."
+
+class DocumentCitationItem(BaseModel):
+    page_number: Optional[int] = None
+    snippet: str
+    score: Optional[float] = None
+
+class AssistantDocumentQueryResponse(BaseModel):
+    answer: str
+    document_name: str
+    total_pages: int
+    citations: List[DocumentCitationItem] = []
+    provider_used: Optional[str] = None
+    disclaimer: str = "This answer is grounded exclusively in your uploaded document. It does not constitute licensed financial or legal advice."

@@ -27,7 +27,11 @@ import {
   XCircle,
   Info,
   Eye,
-  RotateCcw
+  RotateCcw,
+  Sparkles,
+  Zap,
+  Cpu,
+  Layers
 } from 'lucide-react';
 
 // ─── Status Badge Component ─────────────────────────────────────────────────
@@ -120,6 +124,56 @@ export const AdminPage = () => {
   const [jobTriggering, setJobTriggering] = useState(null);
   const [actionNotice, setActionNotice] = useState(null);
 
+  // ── AI Model Retraining Pipeline State ─────────────────────────────────────
+  const [retrainData, setRetrainData] = useState(null);
+  const [retrainLoading, setRetrainLoading] = useState(false);
+  const [retrainTriggering, setRetrainTriggering] = useState(false);
+  const [retrainNotice, setRetrainNotice] = useState(null);
+
+  const fetchRetrainStatus = useCallback(async () => {
+    try {
+      setRetrainLoading(true);
+      const data = await api.getRetrainStatus();
+      setRetrainData(data);
+    } catch (err) {
+      console.error('Failed to load retrain status:', err);
+    } finally {
+      setRetrainLoading(false);
+    }
+  }, []);
+
+  const handleTriggerRetrain = async () => {
+    setRetrainTriggering(true);
+    setRetrainNotice(null);
+    try {
+      const res = await api.triggerRetrainPipeline();
+      setRetrainNotice({ type: 'success', message: res.message });
+      await fetchRetrainStatus();
+    } catch (err) {
+      setRetrainNotice({ type: 'error', message: err.message });
+    } finally {
+      setRetrainTriggering(false);
+    }
+  };
+
+  const handleToggleAutoRetrain = async (enabled) => {
+    try {
+      const updated = await api.updateRetrainConfig({ enabled });
+      setRetrainData(updated);
+    } catch (err) {
+      console.error('Failed to toggle auto retrain:', err);
+    }
+  };
+
+  const handleUpdateCadence = async (cadenceDays) => {
+    try {
+      const updated = await api.updateRetrainConfig({ cadence_days: Number(cadenceDays) });
+      setRetrainData(updated);
+    } catch (err) {
+      console.error('Failed to update cadence:', err);
+    }
+  };
+
   // ── Fetch pipeline data ────────────────────────────────────────────────────
   const fetchData = useCallback(async () => {
     try {
@@ -157,7 +211,16 @@ export const AdminPage = () => {
   useEffect(() => {
     fetchData();
     fetchMarketData();
-  }, [fetchData, fetchMarketData]);
+    fetchRetrainStatus();
+  }, [fetchData, fetchMarketData, fetchRetrainStatus]);
+
+  // Poll retrain status while active pipeline is in progress
+  useEffect(() => {
+    if (retrainData?.current_status && !['IDLE', 'COMPLETED', 'FAILED'].includes(retrainData.current_status)) {
+      const pollTimer = setInterval(fetchRetrainStatus, 4000);
+      return () => clearInterval(pollTimer);
+    }
+  }, [retrainData?.current_status, fetchRetrainStatus]);
 
   // ── Market Scan (on-demand rescan button) ─────────────────────────────────
   const handleMarketScan = async () => {
@@ -895,7 +958,268 @@ export const AdminPage = () => {
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          SECTION 2: SOURCE REGISTRY & COMPLIANCE GOVERNANCE
+          SECTION 2: AI MODEL RETRAINING & CLOUDFLARE EDGE PIPELINE
+      ══════════════════════════════════════════════════════════════════════ */}
+      <div className="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden space-y-6 p-6 sm:p-8">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-teal-50 flex items-center justify-center border border-teal-100 shrink-0">
+              <Cpu className="w-5 h-5 text-teal-700" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h2 className="text-base font-bold text-slate-900">AI Model Retraining &amp; Cloudflare Edge Pipeline</h2>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-800 font-bold border border-teal-200">
+                  1-Month Inbuilt Timer
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Autonomous periodic retraining cycle. Rebuilds training pairs from Postgres, pushes to Kaggle GPU, and synchronizes the Cloudflare Workers AI edge model.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={fetchRetrainStatus}
+              className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
+              title="Refresh status"
+            >
+              <RefreshCw className={`w-4 h-4 ${retrainLoading ? 'animate-spin' : ''}`} />
+            </button>
+            <button
+              onClick={handleTriggerRetrain}
+              disabled={retrainTriggering || (retrainData?.current_status && !['IDLE', 'COMPLETED', 'FAILED'].includes(retrainData.current_status))}
+              className="flex items-center gap-2 px-4 py-2.5 bg-teal-700 hover:bg-teal-800 disabled:opacity-50 text-white rounded-xl text-xs font-semibold transition-all shadow-sm cursor-pointer"
+            >
+              <Play className={`w-3.5 h-3.5 fill-current ${retrainTriggering ? 'animate-spin' : ''}`} />
+              <span>{retrainTriggering ? 'Triggering Pipeline...' : 'Trigger Retrain Now'}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Retrain Notice Banner if any */}
+        {retrainNotice && (
+          <div className={`p-3.5 rounded-2xl border text-xs flex items-center justify-between gap-3 ${
+            retrainNotice.type === 'error'
+              ? 'bg-rose-50 border-rose-200 text-rose-800'
+              : 'bg-teal-50 border-teal-200 text-teal-800'
+          }`}>
+            <div className="flex items-center gap-2">
+              {retrainNotice.type === 'error' ? <AlertCircle className="w-4 h-4 shrink-0" /> : <CheckCircle className="w-4 h-4 shrink-0" />}
+              <span>{retrainNotice.message}</span>
+            </div>
+            <button onClick={() => setRetrainNotice(null)} className="text-slate-400 hover:text-slate-600 text-xs cursor-pointer">✕</button>
+          </div>
+        )}
+
+        {/* Status Metrics Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div className="flex items-center justify-between text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
+              <span>Edge Model</span>
+              <Cpu className="w-3.5 h-3.5 text-teal-600" />
+            </div>
+            <p className="text-sm font-bold text-slate-800 truncate" title={retrainData?.model_name}>
+              {retrainData?.model_name || 'Llama-3.1-8B-fp8 (LoRA r=8)'}
+            </p>
+            <a
+              href={retrainData?.cloudflare_endpoint || 'https://bimagyan-ai.siddharth-bimagyan.workers.dev'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-teal-700 hover:underline flex items-center gap-0.5 truncate"
+            >
+              Cloudflare Edge Runtime <ExternalLink className="w-2.5 h-2.5" />
+            </a>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div className="flex items-center justify-between text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
+              <span>Pipeline Status</span>
+              <Zap className="w-3.5 h-3.5 text-amber-500" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10.5px] font-bold border ${
+                retrainData?.current_status === 'IDLE'
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                  : retrainData?.current_status === 'FAILED'
+                  ? 'bg-rose-50 text-rose-800 border-rose-200'
+                  : 'bg-blue-50 text-blue-800 border-blue-200 animate-pulse'
+              }`}>
+                {retrainData?.current_status || 'IDLE'}
+              </span>
+            </div>
+            <p className="text-[10.5px] text-slate-500 truncate" title={retrainData?.current_step}>
+              {retrainData?.current_step || 'Ready for next run'}
+            </p>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div className="flex items-center justify-between text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
+              <span>Next Retrain Due</span>
+              <Clock className="w-3.5 h-3.5 text-indigo-600" />
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-lg font-extrabold text-slate-900">
+                {retrainData?.days_remaining !== undefined ? `${retrainData.days_remaining}d` : '30d'}
+              </span>
+              <span className="text-[10.5px] text-slate-500">
+                ({retrainData?.cadence_days || 30}-day cycle)
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-400">
+              {retrainData?.next_run ? new Date(retrainData.next_run).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Next month'}
+            </p>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div className="flex items-center justify-between text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
+              <span>Scheduler Mode</span>
+              <RotateCcw className="w-3.5 h-3.5 text-teal-600" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10.5px] font-bold border ${
+                retrainData?.enabled
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                  : 'bg-slate-100 text-slate-600 border-slate-200'
+              }`}>
+                {retrainData?.enabled ? 'AUTONOMOUS' : 'PAUSED'}
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-400">
+              {retrainData?.enabled ? 'Runs every 30 days automatically' : 'Manual triggers only'}
+            </p>
+          </div>
+        </div>
+
+        {/* Cadence & Scheduler Configuration Controls */}
+        <div className="p-4 rounded-2xl bg-teal-50/50 border border-teal-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-3">
+            <label className="flex items-center gap-2 font-semibold text-slate-700 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={retrainData?.enabled ?? true}
+                onChange={(e) => handleToggleAutoRetrain(e.target.checked)}
+                className="w-4 h-4 text-teal-700 rounded border-slate-300 focus:ring-teal-600 cursor-pointer"
+              />
+              <span>Enable Automatic 1-Month Retraining Loop</span>
+            </label>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-slate-500">Cadence Interval:</span>
+            <select
+              value={retrainData?.cadence_days || 30}
+              onChange={(e) => handleUpdateCadence(e.target.value)}
+              className="px-2.5 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-teal-600 outline-none cursor-pointer"
+            >
+              <option value="14">Every 14 Days (Bi-weekly)</option>
+              <option value="30">Every 30 Days (1 Month - Recommended)</option>
+              <option value="60">Every 60 Days (2 Months)</option>
+              <option value="90">Every 90 Days (Quarterly)</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Pipeline Step Visualizer */}
+        <div className="space-y-2 pt-1">
+          <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
+            Automated Retraining &amp; Edge Sync Stages
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
+            <div className={`p-3 rounded-xl border flex items-center gap-2.5 ${
+              retrainData?.current_status === 'BUILDING_DATASET'
+                ? 'bg-blue-50 border-blue-200 text-blue-900 font-semibold ring-1 ring-blue-300'
+                : 'bg-slate-50 border-slate-200/80 text-slate-600'
+            }`}>
+              <span className="w-5 h-5 rounded-full bg-teal-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">1</span>
+              <span className="truncate">Extract Live DB &amp; Export JSONL</span>
+            </div>
+            <div className={`p-3 rounded-xl border flex items-center gap-2.5 ${
+              retrainData?.current_status === 'UPLOADING_KAGGLE'
+                ? 'bg-blue-50 border-blue-200 text-blue-900 font-semibold ring-1 ring-blue-300'
+                : 'bg-slate-50 border-slate-200/80 text-slate-600'
+            }`}>
+              <span className="w-5 h-5 rounded-full bg-teal-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">2</span>
+              <span className="truncate">Push Dataset to Kaggle Hub</span>
+            </div>
+            <div className={`p-3 rounded-xl border flex items-center gap-2.5 ${
+              retrainData?.current_status === 'TRIGGERING_KAGGLE'
+                ? 'bg-blue-50 border-blue-200 text-blue-900 font-semibold ring-1 ring-blue-300'
+                : 'bg-slate-50 border-slate-200/80 text-slate-600'
+            }`}>
+              <span className="w-5 h-5 rounded-full bg-teal-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">3</span>
+              <span className="truncate">Train LoRA on Kaggle GPU</span>
+            </div>
+            <div className={`p-3 rounded-xl border flex items-center gap-2.5 ${
+              retrainData?.current_status === 'SYNCING_CLOUDFLARE'
+                ? 'bg-blue-50 border-blue-200 text-blue-900 font-semibold ring-1 ring-blue-300'
+                : 'bg-slate-50 border-slate-200/80 text-slate-600'
+            }`}>
+              <span className="w-5 h-5 rounded-full bg-teal-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">4</span>
+              <span className="truncate">Deploy &amp; Verify Edge Model</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Retraining History Log */}
+        {retrainData?.history && retrainData.history.length > 0 && (
+          <div className="space-y-2 pt-2 border-t border-slate-100">
+            <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
+              Recent Retraining Executions
+            </span>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs min-w-[600px]">
+                <thead className="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200">
+                  <tr>
+                    <th className="p-2.5">Run ID</th>
+                    <th className="p-2.5">Date &amp; Time</th>
+                    <th className="p-2.5">Trigger Mode</th>
+                    <th className="p-2.5">Duration</th>
+                    <th className="p-2.5">Status</th>
+                    <th className="p-2.5">Details</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-slate-700">
+                  {retrainData.history.map((h, hIdx) => (
+                    <tr key={hIdx} className="hover:bg-slate-50/60">
+                      <td className="p-2.5 font-mono text-[11px] font-medium text-slate-600">{h.id}</td>
+                      <td className="p-2.5 whitespace-nowrap text-slate-600">
+                        {new Date(h.timestamp).toLocaleString('en-IN', {
+                          day: 'numeric', month: 'short', year: 'numeric',
+                          hour: '2-digit', minute: '2-digit'
+                        })}
+                      </td>
+                      <td className="p-2.5">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-700">
+                          {h.trigger}
+                        </span>
+                      </td>
+                      <td className="p-2.5 font-mono text-[11px] text-slate-500">
+                        {h.duration_seconds ? `${h.duration_seconds}s` : '—'}
+                      </td>
+                      <td className="p-2.5">
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                          h.status === 'SUCCESS' ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-50 text-rose-800 border border-rose-200'
+                        }`}>
+                          {h.status}
+                        </span>
+                      </td>
+                      <td className="p-2.5 text-[11px] text-slate-500 max-w-xs truncate" title={h.details}>
+                        {h.details}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          SECTION 3: SOURCE REGISTRY & COMPLIANCE GOVERNANCE
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden space-y-4 p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">

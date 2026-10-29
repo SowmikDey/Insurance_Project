@@ -24,12 +24,8 @@ class Settings(BaseSettings):
     DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://localhost:5432/insurance_db")
     DATABASE_DIRECT_URL: Optional[str] = os.getenv("DATABASE_DIRECT_URL", None)
     
-    # LLM & RAG Configuration
-    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "hybrid") # hybrid, gemini, ollama, openai
-    GEMINI_API_KEY: Optional[str] = os.getenv("GEMINI_API_KEY", None)
-    OPENAI_API_KEY: Optional[str] = os.getenv("OPENAI_API_KEY", None)
-    OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-    OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "Qwen3-4B-Instruct-2507")
+    # LLM & RAG Configuration (Cloudflare Workers AI / Edge Inference)
+    LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "bimagyan")
     
     # Upload storage
     UPLOAD_DIR: str = os.getenv("UPLOAD_DIR", "data/uploads")
@@ -44,5 +40,19 @@ class Settings(BaseSettings):
 
     # Admin API key for protected endpoints
     ADMIN_API_KEY: Optional[str] = os.getenv("ADMIN_API_KEY", None)
+
+
+    # -- Hugging Face (fine-tuned BimaGyan model) ----------------------------
+    # After fine-tuning on Kaggle, push the merged model to HF Hub and set:
+    #   HF_API_TOKEN      = your HF read/write token (hf_...)
+    #   HF_INFERENCE_URL  = https://api-inference.huggingface.co/models/<user>/<repo>-merged
+    #   HF_MODEL_REPO     = <user>/<repo>  (used by upload / retrain scripts)
+    HF_API_TOKEN: Optional[str] = os.getenv("HF_API_TOKEN", None)
+    HF_INFERENCE_URL: Optional[str] = os.getenv("HF_INFERENCE_URL", None)
+    HF_MODEL_REPO: Optional[str] = os.getenv("HF_MODEL_REPO", None)
+
+    # -- Kaggle API credentials (for dataset upload & notebook retraining) ---
+    KAGGLE_USERNAME: Optional[str] = os.getenv("KAGGLE_USERNAME", None)
+    KAGGLE_KEY: Optional[str] = os.getenv("KAGGLE_KEY", None)
 
 settings = Settings()
